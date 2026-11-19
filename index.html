@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,104 +6,559 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="The Reading Room — UGC NET English study resources by SHIVA Institute of English.">
 <title>The Reading Room | UGC NET English</title>
+
 <style>
-:root{--ink:#272321;--muted:#6d625b;--paper:#f7f1e6;--card:#fffdf8;--wine:#6d2638;--gold:#b38a45;--line:#dfd2bd}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
-a{color:var(--wine)}.wrap{width:min(1120px,92%);margin:auto}
-header{border-bottom:1px solid var(--line);background:#fbf7ef}
-.top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0}.brand{font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--wine);font-weight:bold}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;font-weight:normal}
-nav{display:flex;gap:18px;flex-wrap:wrap;font:13px Arial,sans-serif}nav a{text-decoration:none;color:var(--ink)}
-.hero{padding:76px 0 66px;background:linear-gradient(115deg,#f5ecdc,#fbf8f1 60%,#eee1ce);border-bottom:1px solid var(--line)}
-.eyebrow{font:11px Arial,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:var(--gold);font-weight:bold}
-h1{font-size:clamp(42px,7vw,76px);line-height:1.02;max-width:780px;margin:15px 0;color:var(--wine);font-weight:normal}
-.lead{font-size:19px;color:var(--muted);max-width:720px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:12px 18px;background:var(--wine);color:white;text-decoration:none;font:13px Arial,sans-serif;border:1px solid var(--wine)}
-.btn.secondary{background:transparent;color:var(--wine)}
-section{padding:54px 0}.section-head{margin-bottom:25px}.section-head h2{font-size:34px;font-weight:normal;color:var(--wine);margin:5px 0}.section-head p{color:var(--muted);max-width:760px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:var(--card);border:1px solid var(--line);padding:22px;min-height:175px}
-.num{font:11px Arial,sans-serif;letter-spacing:.15em;color:var(--gold)}.card h3{font-size:21px;font-weight:normal;color:var(--wine);margin:8px 0}.card p{font-size:15px;color:var(--muted);margin:0}
-.note{background:#efe5d4;border-left:3px solid var(--gold);padding:17px 20px;margin-top:22px;color:#51463e}
-.paper{background:var(--card);border:1px solid var(--line);padding:22px}.paper-head{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.paper h3{font-size:24px;font-weight:normal;color:var(--wine);margin:0}.paper iframe{width:100%;height:680px;border:1px solid var(--line);margin-top:18px;background:white}
-.practice{display:grid;grid-template-columns:1fr 1fr;gap:18px}.practice article{padding:22px;border:1px solid var(--line);background:var(--card)}.practice h3{margin:0 0 8px;color:var(--wine);font-weight:normal;font-size:22px}
-footer{background:#302725;color:#f7f1e6;padding:28px 0;font-size:14px}footer a{color:#e5c98e}
-@media(max-width:760px){.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr 1fr}.paper iframe{height:520px}}
-@media(max-width:520px){.grid,.practice{grid-template-columns:1fr}.hero{padding:55px 0}.lead{font-size:17px}}
+:root {
+  --ink: #272321;
+  --muted: #6d625b;
+  --paper: #f7f1e6;
+  --card: #fffdf8;
+  --wine: #6d2638;
+  --gold: #b38a45;
+  --line: #dfd2bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--wine);
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  border-bottom: 1px solid var(--line);
+  background: #fbf7ef;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 0;
+}
+
+.brand {
+  font-size: 17px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--wine);
+  font-weight: bold;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .16em;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font: 13px Arial, sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--ink);
+}
+
+/* HERO */
+
+.hero {
+  padding: 76px 0 66px;
+  background: linear-gradient(
+    115deg,
+    #f5ecdc,
+    #fbf8f1 60%,
+    #eee1ce
+  );
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font: 11px Arial, sans-serif;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.02;
+  max-width: 780px;
+  margin: 15px 0;
+  color: var(--wine);
+  font-weight: normal;
+}
+
+.lead {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  background: var(--wine);
+  color: white;
+  text-decoration: none;
+  font: 13px Arial, sans-serif;
+  border: 1px solid var(--wine);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--wine);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 54px 0;
+}
+
+.section-head {
+  margin-bottom: 25px;
+}
+
+.section-head h2 {
+  font-size: 34px;
+  font-weight: normal;
+  color: var(--wine);
+  margin: 5px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 760px;
+  margin: 0;
+}
+
+/* STUDY SHELVES */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 22px;
+  min-height: 175px;
+}
+
+.num {
+  font: 11px Arial, sans-serif;
+  letter-spacing: .15em;
+  color: var(--gold);
+}
+
+.card h3 {
+  font-size: 21px;
+  font-weight: normal;
+  color: var(--wine);
+  margin: 8px 0;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* PDF AND SPREADSHEET */
+
+.note {
+  background: #efe5d4;
+  border-left: 3px solid var(--gold);
+  padding: 17px 20px;
+  margin-top: 22px;
+  color: #51463e;
+}
+
+.paper {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+
+.paper-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.paper h3 {
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--wine);
+  margin: 0;
+}
+
+.paper iframe {
+  width: 100%;
+  height: 680px;
+  border: 1px solid var(--line);
+  margin-top: 18px;
+  background: white;
+}
+
+/* STUDY METHOD */
+
+.practice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.practice article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.practice h3 {
+  margin: 0 0 8px;
+  color: var(--wine);
+  font-weight: normal;
+  font-size: 22px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #302725;
+  color: #f7f1e6;
+  padding: 28px 0;
+  font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:760px) {
+  .top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .paper iframe {
+    height: 520px;
+  }
+}
+
+@media(max-width:520px) {
+  .grid,
+  .practice {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap top">
-  <div class="brand">The Reading Room<small>SHIVA Institute of English</small></div>
-  <nav aria-label="Main navigation">
-<a href="#shelves">Study shelves</a>
-<a href="#papers">Solved papers</a>
-<a href="#spreadsheet">Study spreadsheet</a>
-<a href="#method">How to study</a>
-</nav>
-</div></header>
-<main>
-<section class="hero"><div class="wrap">
-  <div class="eyebrow">A focused study space for English Literature</div>
-  <h1>Read closely.<br>Think critically.</h1>
-  <p class="lead">A structured reading room for UGC NET English aspirants, bringing literary periods, authors, works, criticism, theory and examination practice into one place.</p>
-  <div class="hero-actions">
-<a class="btn" href="#shelves">Explore study shelves</a>
-<a class="btn secondary" href="#papers">Open solved-paper library</a>
-<a class="btn secondary" href="#spreadsheet">Open study spreadsheet</a>
-</div>
-</div></section>
-<section id="shelves"><div class="wrap">
-  <div class="section-head"><div class="eyebrow">The subject library</div><h2>Study by subject</h2><p>Use these shelves to organise your preparation. Each shelf identifies a major area for systematic revision; the descriptions are a guide to topics, not a claim that separate question banks are already included.</p></div>
-  <div class="grid">
-    <article class="card"><span class="num">SHELF 01</span><h3>British Literary History</h3><p>Renaissance, Elizabethan and Jacobean writing, Puritan age, Restoration, Augustan, Romantic, Victorian and Modern periods.</p></article>
-    <article class="card"><span class="num">SHELF 02</span><h3>Literary Criticism &amp; Theory</h3><p>Classical criticism, Renaissance criticism, Romantic and Victorian critics, New Criticism, Formalism, Structuralism, Deconstruction and Postcolonial criticism.</p></article>
-    <article class="card"><span class="num">SHELF 03</span><h3>Poetry &amp; Prosody</h3><p>Poets, poems, forms, metres, rhythm, figures of speech, sonnets, elegies, odes and key poetic concepts.</p></article>
-    <article class="card"><span class="num">SHELF 04</span><h3>Drama &amp; Theatre</h3><p>Shakespeare, revenge tragedy, comedy, Restoration drama, modern drama, playwrights, characters and theatre movements.</p></article>
-    <article class="card"><span class="num">SHELF 05</span><h3>Fiction &amp; Prose</h3><p>Novelists, novels, characters, narrative forms, essays, biographies, prose works and publication details.</p></article>
-    <article class="card"><span class="num">SHELF 06</span><h3>Indian &amp; World Literature</h3><p>Indian writing in English, diaspora, African, Caribbean, Canadian and other world-literature references.</p></article>
-    <article class="card"><span class="num">SHELF 07</span><h3>Linguistics &amp; Language</h3><p>Language concepts and terminology, branches of linguistics, language acquisition and major linguistic distinctions.</p></article>
-    <article class="card"><span class="num">SHELF 08</span><h3>Chronology &amp; Matching</h3><p>Arrange authors, works, literary periods and movements; practise match-the-following and sequence-based revision.</p></article>
-    <article class="card"><span class="num">SHELF 09</span><h3>Previous-Year Practice</h3><p>Attempt year-labelled questions under timed conditions, review the key and maintain an error log.</p></article>
-  </div>
-</div></section>
-<section id="papers">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Digital paper library</div>
-      <h2>UGC NET English solved papers</h2>
-      <p>The supplied collection is titled <em>Question Bank: The Depth Unlimited — UGC NET English Literature</em>. Its opening pages describe solved papers with answer keys for 1994–2014.</p>
+
+<!-- HEADER -->
+
+<header>
+  <div class="wrap top">
+
+    <div class="brand">
+      The Reading Room
+      <small>SHIVA Institute of English</small>
     </div>
 
-    <div class="paper">
-      <div class="paper-head">
-        <h3>Solved papers, 1994–2014</h3>
-        <a class="btn" href="assets/ugc-net-english-solved-papers-1994-2014.pdf" target="_blank" rel="noopener">Open / download PDF</a>
-      </div>
+    <nav aria-label="Main navigation">
+      <a href="#shelves">Study shelves</a>
+      <a href="#papers">Solved papers</a>
+      <a href="#spreadsheet">Study spreadsheet</a>
+      <a href="#method">How to study</a>
+    </nav>
 
-      <iframe src="assets/ugc-net-english-solved-papers-1994-2014.pdf" title="UGC NET English solved papers PDF"></iframe>
+  </div>
+</header>
 
-      <p style="color:var(--muted);font-size:14px">
-        If the preview does not appear on your device, use the Open / download PDF link. Verify question wording and answer keys before using them in formal study material.
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+  <div class="wrap">
+
+    <div class="eyebrow">
+      A focused study space for English Literature
+    </div>
+
+    <h1>
+      Read closely.<br>
+      Think critically.
+    </h1>
+
+    <p class="lead">
+      A structured reading room for UGC NET English aspirants,
+      bringing literary periods, authors, works, criticism,
+      theory and examination practice into one place.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="#shelves">
+        Explore study shelves
+      </a>
+
+      <a class="btn secondary" href="#papers">
+        Open solved-paper library
+      </a>
+
+      <a class="btn secondary" href="#spreadsheet">
+        Open study spreadsheet
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- NINE STUDY SHELVES -->
+
+<section id="shelves">
+  <div class="wrap">
+
+    <div class="section-head">
+      <div class="eyebrow">The subject library</div>
+
+      <h2>Study by subject</h2>
+
+      <p>
+        Use these shelves to organise your preparation.
+        Each shelf identifies a major area for systematic
+        revision; the descriptions are a guide to topics,
+        not a claim that separate question banks are already included.
       </p>
     </div>
 
-    <div class="note">
-      <strong>Resource note:</strong> This is a historical practice collection, not a substitute for the current official UGC NET syllabus, notifications or updated examination pattern. Please ensure you have permission to redistribute the supplied PDF publicly before publishing it.
+    <div class="grid">
+
+      <article class="card">
+        <span class="num">SHELF 01</span>
+        <h3>British Literary History</h3>
+        <p>
+          Renaissance, Elizabethan and Jacobean writing,
+          Puritan age, Restoration, Augustan, Romantic,
+          Victorian and Modern periods.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 02</span>
+        <h3>Literary Criticism &amp; Theory</h3>
+        <p>
+          Classical criticism, Renaissance criticism,
+          Romantic and Victorian critics, New Criticism,
+          Formalism, Structuralism, Deconstruction
+          and Postcolonial criticism.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 03</span>
+        <h3>Poetry &amp; Prosody</h3>
+        <p>
+          Poets, poems, forms, metres, rhythm,
+          figures of speech, sonnets, elegies,
+          odes and key poetic concepts.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 04</span>
+        <h3>Drama &amp; Theatre</h3>
+        <p>
+          Shakespeare, revenge tragedy, comedy,
+          Restoration drama, modern drama,
+          playwrights, characters and theatre movements.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 05</span>
+        <h3>Fiction &amp; Prose</h3>
+        <p>
+          Novelists, novels, characters, narrative forms,
+          essays, biographies, prose works
+          and publication details.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 06</span>
+        <h3>Indian &amp; World Literature</h3>
+        <p>
+          Indian writing in English, diaspora,
+          African, Caribbean, Canadian and other
+          world-literature references.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 07</span>
+        <h3>Linguistics &amp; Language</h3>
+        <p>
+          Language concepts and terminology,
+          branches of linguistics, language acquisition
+          and major linguistic distinctions.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 08</span>
+        <h3>Chronology &amp; Matching</h3>
+        <p>
+          Arrange authors, works, literary periods
+          and movements; practise match-the-following
+          and sequence-based revision.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="num">SHELF 09</span>
+        <h3>Previous-Year Practice</h3>
+        <p>
+          Attempt year-labelled questions under timed
+          conditions, review the key and maintain
+          an error log.
+        </p>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section id="spreadsheet">
+<!-- SOLVED PAPERS PDF -->
+
+<section id="papers">
   <div class="wrap">
+
     <div class="section-head">
-      <div class="eyebrow">Additional study resource</div>
-      <h2>UGC NET English Study Spreadsheet</h2>
-      <p>Access this supplementary Google Sheets resource for your UGC NET English preparation.</p>
+      <div class="eyebrow">Digital paper library</div>
+
+      <h2>UGC NET English solved papers</h2>
+
+      <p>
+        The supplied collection is titled
+        <em>Question Bank: The Depth Unlimited —
+        UGC NET English Literature</em>.
+        Its opening pages describe solved papers
+        with answer keys for 1994–2014.
+      </p>
     </div>
 
     <div class="paper">
+
+      <div class="paper-head">
+        <h3>Solved papers, 1994–2014</h3>
+
+        <a class="btn"
+           href="assets/ugc-net-english-solved-papers-1994-2014.pdf"
+           target="_blank"
+           rel="noopener">
+          Open / download PDF
+        </a>
+      </div>
+
+      <iframe
+        src="assets/ugc-net-english-solved-papers-1994-2014.pdf"
+        title="UGC NET English solved papers PDF">
+      </iframe>
+
+      <p style="color:var(--muted);font-size:14px">
+        If the preview does not appear on your device,
+        use the Open / download PDF link. Verify question
+        wording and answer keys before using them in
+        formal study material.
+      </p>
+
+    </div>
+
+    <div class="note">
+      <strong>Resource note:</strong>
+      This is a historical practice collection, not a
+      substitute for the current official UGC NET syllabus,
+      notifications or updated examination pattern.
+      Please ensure you have permission to redistribute
+      the supplied PDF publicly before publishing it.
+    </div>
+
+  </div>
+</section>
+
+<!-- GOOGLE SPREADSHEET -->
+
+<section id="spreadsheet">
+  <div class="wrap">
+
+    <div class="section-head">
+      <div class="eyebrow">Additional study resource</div>
+
+      <h2>UGC NET English Study Spreadsheet</h2>
+
+      <p>
+        Access this supplementary Google Sheets resource
+        for your UGC NET English preparation.
+      </p>
+    </div>
+
+    <div class="paper">
+
       <div class="paper-head">
         <h3>Study and Revision Spreadsheet</h3>
+
         <a class="btn"
            href="https://docs.google.com/spreadsheets/d/1psn5DBQQBodxdk6WLIdfqxmb8zzZLj3lO3p2z4GJpwE/edit?gid=1231975242#gid=1231975242"
            target="_blank"
@@ -112,49 +568,83 @@ footer{background:#302725;color:#f7f1e6;padding:28px 0;font-size:14px}footer a{c
       </div>
 
       <p style="color:var(--muted);font-size:14px;margin-top:15px">
-        Click the button above to open the spreadsheet in a new tab. Access depends on the Google Sheet's sharing permissions.
+        Click the button above to open the spreadsheet
+        in a new tab. Access depends on the Google Sheet's
+        sharing permissions.
       </p>
+
     </div>
   </div>
+</section>
+
+<!-- HOW TO STUDY -->
+
 <section id="method">
   <div class="wrap">
+
     <div class="section-head">
       <div class="eyebrow">A practical routine</div>
+
       <h2>How to use the Reading Room</h2>
-      <p>Build a repeatable cycle rather than reading topics without testing recall.</p>
+
+      <p>
+        Build a repeatable cycle rather than reading
+        topics without testing recall.
+      </p>
     </div>
 
     <div class="practice">
+
       <article>
         <h3>01 — Read and map</h3>
-        <p>Choose one shelf. Make a compact timeline of authors, works, dates, movements and key terms.</p>
+        <p>
+          Choose one shelf. Make a compact timeline
+          of authors, works, dates, movements
+          and key terms.
+        </p>
       </article>
 
       <article>
         <h3>02 — Retrieve from memory</h3>
-        <p>Close your notes and recall names, titles, concepts and chronological relationships before checking.</p>
+        <p>
+          Close your notes and recall names, titles,
+          concepts and chronological relationships
+          before checking.
+        </p>
       </article>
 
       <article>
         <h3>03 — Practise questions</h3>
-        <p>Attempt relevant previous-year questions without looking at the answer key. Note why each distractor is incorrect.</p>
+        <p>
+          Attempt relevant previous-year questions
+          without looking at the answer key.
+          Note why each distractor is incorrect.
+        </p>
       </article>
 
       <article>
         <h3>04 — Review errors</h3>
-        <p>Maintain an error log and revisit weak topics at spaced intervals. Cross-check facts with reliable references.</p>
+        <p>
+          Maintain an error log and revisit weak topics
+          at spaced intervals. Cross-check facts
+          with reliable references.
+        </p>
       </article>
+
     </div>
   </div>
 </section>
-  <div class="section-head"><div class="eyebrow">A practical routine</div><h2>How to use the Reading Room</h2><p>Build a repeatable cycle rather than reading topics without testing recall.</p></div>
-  <div class="practice">
-    <article><h3>01 — Read and map</h3><p>Choose one shelf. Make a compact timeline of authors, works, dates, movements and key terms.</p></article>
-    <article><h3>02 — Retrieve from memory</h3><p>Close your notes and recall names, titles, concepts and chronological relationships before checking.</p></article>
-    <article><h3>03 — Practise questions</h3><p>Attempt relevant previous-year questions without looking at the answer key. Note why each distractor is incorrect.</p></article>
-    <article><h3>04 — Review errors</h3><p>Maintain an error log and revisit weak topics at spaced intervals. Cross-check facts with reliable references.</p></article>
-  </div>
-</div></section>
+
 </main>
-<footer><div class="wrap">The Reading Room · SHIVA Institute of English · Mancheswar, Bhubaneswar, Odisha</div></footer>
-</body></html>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+    The Reading Room · SHIVA Institute of English ·
+    Mancheswar, Bhubaneswar, Odisha
+  </div>
+</footer>
+
+</body>
+</html>
