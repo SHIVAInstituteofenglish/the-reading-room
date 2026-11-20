@@ -1,12 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Reading Room — UGC NET English study resources by SHIVA Institute of English.">
+
+<meta name="description" content="The Reading Room — UGC NET English study resources, video lectures and academic resources by SHIVA Institute of English.">
+
 <title>The Reading Room | UGC NET English</title>
 
 <style>
+
+/* =================================
+   GLOBAL DESIGN
+================================= */
+
 :root {
   --ink: #272321;
   --muted: #6d625b;
@@ -23,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
 body {
@@ -42,7 +51,9 @@ a {
   margin: auto;
 }
 
-/* HEADER */
+/* =================================
+   HEADER AND NAVIGATION
+================================= */
 
 header {
   border-bottom: 1px solid var(--line);
@@ -85,7 +96,14 @@ nav a {
   color: var(--ink);
 }
 
-/* HERO */
+nav a:hover {
+  color: var(--wine);
+  text-decoration: underline;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
 
 .hero {
   padding: 76px 0 66px;
@@ -136,6 +154,11 @@ h1 {
   text-decoration: none;
   font: 13px Arial, sans-serif;
   border: 1px solid var(--wine);
+  transition: background .2s ease;
+}
+
+.btn:hover {
+  background: #4e1929;
 }
 
 .btn.secondary {
@@ -143,7 +166,13 @@ h1 {
   color: var(--wine);
 }
 
-/* GENERAL SECTIONS */
+.btn.secondary:hover {
+  background: #eee1ce;
+}
+
+/* =================================
+   GENERAL SECTIONS
+================================= */
 
 section {
   padding: 54px 0;
@@ -166,7 +195,9 @@ section {
   margin: 0;
 }
 
-/* STUDY SHELVES */
+/* =================================
+   STUDY SHELVES
+================================= */
 
 .grid {
   display: grid;
@@ -200,7 +231,9 @@ section {
   margin: 0;
 }
 
-/* PDF AND SPREADSHEET */
+/* =================================
+   PAPERS, SPREADSHEET AND VIDEO CARDS
+================================= */
 
 .note {
   background: #efe5d4;
@@ -239,7 +272,27 @@ section {
   background: white;
 }
 
-/* STUDY METHOD */
+/* =================================
+   VIDEO CLASSROOM
+================================= */
+
+#videos .video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 0;
+  margin-top: 18px;
+  background: #000;
+}
+
+#videos .paper {
+  margin-bottom: 25px;
+}
+
+/* =================================
+   STUDY METHOD
+================================= */
 
 .practice {
   display: grid;
@@ -260,47 +313,9 @@ section {
   font-size: 22px;
 }
 
-/* FOOTER */
-
-footer {
-  background: #302725;
-  color: #f7f1e6;
-  padding: 28px 0;
-  font-size: 14px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media(max-width:760px) {
-  .top {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .paper iframe {
-    height: 520px;
-  }
-}
-
-@media(max-width:520px) {
-  .grid,
-  .practice {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 55px 0;
-  }
-
-  .lead {
-    font-size: 17px;
-  }
-}
-/* ===== CONNECT WITH US DESIGN ===== */
+/* =================================
+   CONNECT WITH US
+================================= */
 
 .connect-section {
   padding: 75px 0;
@@ -342,8 +357,10 @@ footer {
   text-decoration: none;
   color: #49343a;
   box-shadow: 0 5px 18px rgba(65, 35, 45, 0.05);
-  transition: transform .25s ease, box-shadow .25s ease,
-              border-color .25s ease;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
 }
 
 .connect-card:hover {
@@ -365,14 +382,36 @@ footer {
   font-weight: bold;
 }
 
-.connect-icon.facebook { background: #1877f2; }
-.connect-icon.instagram {
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+.connect-icon.facebook {
+  background: #1877f2;
 }
-.connect-icon.linkedin { background: #0a66c2; }
-.connect-icon.x-twitter { background: #111; }
-.connect-icon.academia { background: #414141; }
-.connect-icon.email { background: #8a4058; }
+
+.connect-icon.instagram {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
+.connect-icon.linkedin {
+  background: #0a66c2;
+}
+
+.connect-icon.x-twitter {
+  background: #111;
+}
+
+.connect-icon.academia {
+  background: #414141;
+}
+
+.connect-icon.email {
+  background: #8a4058;
+}
 
 .connect-info h3 {
   font-size: 17px;
@@ -395,27 +434,85 @@ footer {
   font-size: 14px;
 }
 
-@media (max-width: 800px) {
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+  background: #302725;
+  color: #f7f1e6;
+  padding: 28px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media(max-width:800px) {
+
+  .top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .connect-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
-@media (max-width: 520px) {
+@media(max-width:760px) {
+
+  nav {
+    gap: 12px;
+  }
+
+}
+
+@media(max-width:520px) {
+
+  .grid,
+  .practice,
   .connect-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .paper {
+    padding: 16px;
+  }
+
+  .paper h3 {
+    font-size: 21px;
   }
 
   .connect-card {
     padding: 18px;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =================================
+     HEADER
+================================= -->
 
 <header>
   <div class="wrap top">
@@ -426,23 +523,30 @@ footer {
     </div>
 
     <nav aria-label="Main navigation">
-  <a href="#shelves">Study shelves</a>
-  <a href="#videos">Video Lectures</a>
-  <a href="#papers">Solved papers</a>
-  <a href="#spreadsheet">Study spreadsheet</a>
-  <a href="#method">How to study</a>
-  <a href="#connect">Connect</a>
-  <a href="https://shiva-institute-of-english.yolasite.com/"
-     target="_blank"
-     rel="noopener noreferrer">SHIVA Institute</a>
-</nav>
+
+      <a href="#shelves">Study shelves</a>
+      <a href="#videos">Video Lectures</a>
+      <a href="#papers">Solved papers</a>
+      <a href="#spreadsheet">Study spreadsheet</a>
+      <a href="#method">How to study</a>
+      <a href="#connect">Connect</a>
+
+      <a href="https://shiva-institute-of-english.yolasite.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        SHIVA Institute
+      </a>
+
+    </nav>
 
   </div>
 </header>
 
 <main>
 
-<!-- HERO SECTION -->
+<!-- =================================
+     HERO SECTION
+================================= -->
 
 <section class="hero">
   <div class="wrap">
@@ -463,6 +567,7 @@ footer {
     </p>
 
     <div class="hero-actions">
+
       <a class="btn" href="#shelves">
         Explore study shelves
       </a>
@@ -474,17 +579,21 @@ footer {
       <a class="btn secondary" href="#spreadsheet">
         Open study spreadsheet
       </a>
+
     </div>
 
   </div>
 </section>
 
-<!-- NINE STUDY SHELVES -->
+<!-- =================================
+     NINE STUDY SHELVES
+================================= -->
 
 <section id="shelves">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">The subject library</div>
 
       <h2>Study by subject</h2>
@@ -495,6 +604,7 @@ footer {
         revision; the descriptions are a guide to topics,
         not a claim that separate question banks are already included.
       </p>
+
     </div>
 
     <div class="grid">
@@ -591,15 +701,19 @@ footer {
       </article>
 
     </div>
+
   </div>
 </section>
 
-<!-- SOLVED PAPERS PDF -->
+<!-- =================================
+     SOLVED PAPERS PDF
+================================= -->
 
 <section id="papers">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">Digital paper library</div>
 
       <h2>UGC NET English solved papers</h2>
@@ -611,11 +725,13 @@ footer {
         Its opening pages describe solved papers
         with answer keys for 1994–2014.
       </p>
+
     </div>
 
     <div class="paper">
 
       <div class="paper-head">
+
         <h3>Solved papers, 1994–2014</h3>
 
         <a class="btn"
@@ -624,6 +740,7 @@ footer {
            rel="noopener">
           Open / download PDF
         </a>
+
       </div>
 
       <iframe
@@ -641,23 +758,28 @@ footer {
     </div>
 
     <div class="note">
+
       <strong>Resource note:</strong>
       This is a historical practice collection, not a
       substitute for the current official UGC NET syllabus,
       notifications or updated examination pattern.
       Please ensure you have permission to redistribute
       the supplied PDF publicly before publishing it.
+
     </div>
 
   </div>
 </section>
 
-<!-- GOOGLE SPREADSHEET -->
+<!-- =================================
+     GOOGLE SPREADSHEET
+================================= -->
 
 <section id="spreadsheet">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">Additional study resource</div>
 
       <h2>UGC NET English Study Spreadsheet</h2>
@@ -666,11 +788,13 @@ footer {
         Access this supplementary Google Sheets resource
         for your UGC NET English preparation.
       </p>
+
     </div>
 
     <div class="paper">
 
       <div class="paper-head">
+
         <h3>Study and Revision Spreadsheet</h3>
 
         <a class="btn"
@@ -679,6 +803,7 @@ footer {
            rel="noopener">
           Open Google Spreadsheet
         </a>
+
       </div>
 
       <p style="color:var(--muted);font-size:14px;margin-top:15px">
@@ -688,14 +813,19 @@ footer {
       </p>
 
     </div>
+
   </div>
 </section>
-<!-- YOUTUBE VIDEO CLASSROOM -->
+
+<!-- =================================
+     ENGLISH LITERATURE VIDEO CLASSROOM
+================================= -->
 
 <section id="videos">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">SHIVA Institute of English</div>
 
       <h2>English Literature Video Classroom</h2>
@@ -705,12 +835,15 @@ footer {
         discussions on poetry, prose and drama.
         Watch the lessons directly in The Reading Room.
       </p>
+
     </div>
 
     <!-- VIDEO 1: ABISARA -->
-    <div class="paper" style="margin-bottom:25px;">
+
+    <div class="paper">
 
       <div class="paper-head">
+
         <h3>01. Abisara (The Tryst)</h3>
 
         <a class="btn"
@@ -719,6 +852,7 @@ footer {
            rel="noopener noreferrer">
           Watch on YouTube
         </a>
+
       </div>
 
       <p>
@@ -727,11 +861,9 @@ footer {
       </p>
 
       <iframe
+        class="video-player"
         src="https://www.youtube-nocookie.com/embed/zGGJOO9zNsA"
         title="Abisara The Tryst by Rabindranath Tagore"
-        width="100%"
-        height="450"
-        style="border:0;"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
@@ -740,9 +872,11 @@ footer {
     </div>
 
     <!-- VIDEO 2: BLOOD KNOT -->
-    <div class="paper" style="margin-bottom:25px;">
+
+    <div class="paper">
 
       <div class="paper-head">
+
         <h3>02. Blood Knot</h3>
 
         <a class="btn"
@@ -751,6 +885,7 @@ footer {
            rel="noopener noreferrer">
           Watch on YouTube
         </a>
+
       </div>
 
       <p>
@@ -759,11 +894,9 @@ footer {
       </p>
 
       <iframe
+        class="video-player"
         src="https://www.youtube-nocookie.com/embed/b_McfKICOyY"
         title="Blood Knot by Athol Fugard"
-        width="100%"
-        height="450"
-        style="border:0;"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
@@ -772,9 +905,11 @@ footer {
     </div>
 
     <!-- COMPLETE BLOOD KNOT PLAYLIST -->
+
     <div class="paper">
 
       <div class="paper-head">
+
         <h3>03. Blood Knot – Complete Video Series</h3>
 
         <a class="btn"
@@ -783,6 +918,7 @@ footer {
            rel="noopener noreferrer">
           Open Full Playlist
         </a>
+
       </div>
 
       <p>
@@ -791,11 +927,44 @@ footer {
       </p>
 
       <iframe
+        class="video-player"
         src="https://www.youtube-nocookie.com/embed/videoseries?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
         title="Blood Knot Complete Video Playlist"
-        width="100%"
-        height="550"
-        style="border:0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+    <!-- CHANNEL UPLOADS PLAYLIST -->
+
+    <div class="paper">
+
+      <div class="paper-head">
+
+        <h3>04. Teach &amp; Thrive – Video Library</h3>
+
+        <a class="btn"
+           href="https://www.youtube.com/@TheSibabrata"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit YouTube Channel
+        </a>
+
+      </div>
+
+      <p>
+        Explore the public video uploads from the
+        Teach &amp; Thrive YouTube channel.
+        New public uploads may appear automatically
+        in this playlist.
+      </p>
+
+      <iframe
+        class="video-player"
+        src="https://www.youtube-nocookie.com/embed/videoseries?list=UUkQuqoH08mGrk3OLjdDzJfQ"
+        title="Teach and Thrive YouTube Uploads"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
@@ -804,77 +973,37 @@ footer {
     </div>
 
     <div class="note">
+
       <strong>Learning suggestion:</strong>
       Watch each lecture carefully, make notes on the
       literary concepts and characters, and revise the
       important points before attempting UGC NET questions.
+
     </div>
 
     <p style="text-align:center; margin-top:25px;">
+
       <a class="btn"
          href="https://www.youtube.com/@TheSibabrata"
          target="_blank"
          rel="noopener noreferrer">
         Explore More Lectures – Teach &amp; Thrive
       </a>
+
     </p>
 
   </div>
 </section>
 
-<section id="videos">
-  <div class="wrap">
-
-    <div class="section-head">
-      <div class="eyebrow">SHIVA Institute of English</div>
-
-      <h2>Video Lectures</h2>
-
-      <p>
-        Watch English Literature, Literary Criticism,
-        Linguistics and UGC NET preparation lectures
-        from The Sibabrata YouTube channel.
-      </p>
-    </div>
-
-    <div class="paper">
-
-      <div class="paper-head">
-        <h3>The Sibabrata – YouTube Library</h3>
-
-        <a class="btn"
-           href="https://www.youtube.com/@TheSibabrata"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit YouTube Channel
-        </a>
-      </div>
-
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=UUkQuqoH08mGrk3OLjdDzJfQ"
-        title="The Sibabrata YouTube Video Library"
-        width="100%"
-        height="500"
-        style="border:0; margin-top:18px;"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-
-      <p style="color:var(--muted);font-size:14px">
-        Select a video from the playlist to watch it here.
-        You can also visit our YouTube channel for more lectures.
-      </p>
-
-    </div>
-  </div>
-</section>
-<!-- HOW TO STUDY -->
+<!-- =================================
+     HOW TO STUDY
+================================= -->
 
 <section id="method">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">A practical routine</div>
 
       <h2>How to use the Reading Room</h2>
@@ -883,6 +1012,7 @@ footer {
         Build a repeatable cycle rather than reading
         topics without testing recall.
       </p>
+
     </div>
 
     <div class="practice">
@@ -924,18 +1054,21 @@ footer {
       </article>
 
     </div>
+
   </div>
 </section>
 
 </main>
 
-<!-- CONNECT WITH US -->
-  <!-- FOOTER -->
-<footer>
+<!-- =================================
+     CONNECT WITH US
+================================= -->
+
 <section id="connect" class="connect-section">
   <div class="wrap">
 
     <div class="section-head">
+
       <div class="eyebrow">SHIVA Institute of English</div>
 
       <h2>Connect With Us</h2>
@@ -944,101 +1077,149 @@ footer {
         Connect, collaborate and stay updated with English Literature,
         Linguistics, academic research and UGC NET learning resources.
       </p>
+
     </div>
 
     <div class="connect-grid">
 
       <!-- FACEBOOK -->
+
       <a class="connect-card"
          href="https://www.facebook.com/sibabrata.nayak.3/"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <div class="connect-icon facebook">f</div>
+
         <div class="connect-info">
           <h3>Facebook</h3>
           <p>Follow our Facebook profile</p>
         </div>
+
       </a>
 
       <!-- INSTAGRAM -->
+
       <a class="connect-card"
          href="https://www.instagram.com/sibabrata_nayak/"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <div class="connect-icon instagram">◎</div>
+
         <div class="connect-info">
           <h3>Instagram</h3>
           <p>Connect through Instagram</p>
         </div>
+
       </a>
 
       <!-- LINKEDIN -->
+
       <a class="connect-card"
          href="https://www.linkedin.com/in/sibabratanayak"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <div class="connect-icon linkedin">in</div>
+
         <div class="connect-info">
           <h3>LinkedIn</h3>
           <p>Professional and academic network</p>
         </div>
+
       </a>
 
       <!-- X / TWITTER -->
+
       <a class="connect-card"
          href="https://x.com/sibabratat27"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <div class="connect-icon x-twitter">X</div>
+
         <div class="connect-info">
           <h3>X (Twitter)</h3>
           <p>Follow updates and discussions</p>
         </div>
+
       </a>
 
       <!-- ACADEMIA.EDU -->
+
       <a class="connect-card"
          href="https://efluniversity.academia.edu/sibabratanayak"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
+
         <div class="connect-icon academia">A</div>
+
         <div class="connect-info">
           <h3>Academia.edu</h3>
           <p>Academic profile and research</p>
         </div>
+
       </a>
 
       <!-- OFFICIAL EMAIL -->
+
       <a class="connect-card"
          href="mailto:hr_general@rediffmail.com">
+
         <div class="connect-icon email">✉</div>
+
         <div class="connect-info">
           <h3>Official Email</h3>
           <p>hr_general@rediffmail.com</p>
         </div>
+
       </a>
 
       <!-- OFFICE EMAIL -->
+
       <a class="connect-card"
          href="mailto:lecture.in.english@gmail.com">
+
         <div class="connect-icon email">✉</div>
+
         <div class="connect-info">
           <h3>Office Email</h3>
           <p>lecture.in.english@gmail.com</p>
         </div>
+
       </a>
 
     </div>
 
     <div class="connect-footer">
+
       SHIVA Institute of English · The Reading Room
+
       <br>
+
       Learn · Research · Connect
+
     </div>
 
   </div>
 </section>
+
+<!-- =================================
+     FOOTER
+================================= -->
+
 <footer>
+
   <div class="wrap">
+
     The Reading Room · SHIVA Institute of English ·
     Mancheswar, Bhubaneswar, Odisha
+
   </div>
+
 </footer>
 
 </body>
 </html>
+```
