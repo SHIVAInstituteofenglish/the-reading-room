@@ -1,1225 +1,763 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="The Reading Room — UGC NET English study resources, video lectures and academic resources by SHIVA Institute of English.">
-
-<title>The Reading Room | UGC NET English</title>
+<meta name="description" content="The Reading Room by SHIVA Institute of English: UGC NET English study resources, online tests, video lectures and academic resources.">
+<title>The Reading Room | SHIVA Institute of English</title>
 
 <style>
-
-/* =================================
-   GLOBAL DESIGN
-================================= */
-
 :root {
-  --ink: #272321;
-  --muted: #6d625b;
-  --paper: #f7f1e6;
-  --card: #fffdf8;
-  --wine: #6d2638;
-  --gold: #b38a45;
-  --line: #dfd2bd;
+  --ink:#272321;
+  --muted:#6d625b;
+  --paper:#f7f1e6;
+  --card:#fffdf8;
+  --wine:#6d2638;
+  --gold:#b38a45;
+  --line:#dfd2bd;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 20px;
-}
-
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.65;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.65;
 }
+a {color:var(--wine)}
+.wrap {width:min(1120px,92%);margin:auto}
 
-a {
-  color: var(--wine);
-}
-
-.wrap {
-  width: min(1120px, 92%);
-  margin: auto;
-}
-
-/* =================================
-   HEADER AND NAVIGATION
-================================= */
-
+/* HEADER */
 header {
-  border-bottom: 1px solid var(--line);
-  background: #fbf7ef;
+  border-bottom:1px solid var(--line);
+  background:#fbf7ef;
 }
-
 .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 17px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:17px 0;
 }
-
 .brand {
-  font-size: 17px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--wine);
-  font-weight: bold;
+  font-size:17px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--wine);
+  font-weight:bold;
 }
-
 .brand small {
-  display: block;
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: .16em;
-  font-weight: normal;
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.16em;
+  font-weight:normal;
 }
-
 nav {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  font: 13px Arial, sans-serif;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  font:13px Arial,sans-serif;
 }
+nav a {text-decoration:none;color:var(--ink)}
+nav a:hover {color:var(--wine);text-decoration:underline}
 
-nav a {
-  text-decoration: none;
-  color: var(--ink);
-}
-
-nav a:hover {
-  color: var(--wine);
-  text-decoration: underline;
-}
-
-/* =================================
-   HERO SECTION
-================================= */
-
+/* HERO */
 .hero {
-  padding: 76px 0 66px;
-  background: linear-gradient(
-    115deg,
-    #f5ecdc,
-    #fbf8f1 60%,
-    #eee1ce
-  );
-  border-bottom: 1px solid var(--line);
+  padding:76px 0 66px;
+  background:linear-gradient(115deg,#f5ecdc,#fbf8f1 60%,#eee1ce);
+  border-bottom:1px solid var(--line);
 }
-
 .eyebrow {
-  font: 11px Arial, sans-serif;
-  letter-spacing: .19em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: bold;
+  font:11px Arial,sans-serif;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:bold;
 }
-
 h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.02;
-  max-width: 780px;
-  margin: 15px 0;
-  color: var(--wine);
-  font-weight: normal;
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.02;
+  max-width:780px;
+  margin:15px 0;
+  color:var(--wine);
+  font-weight:normal;
 }
-
-.lead {
-  font-size: 19px;
-  color: var(--muted);
-  max-width: 720px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 28px;
-}
-
+.lead {font-size:19px;color:var(--muted);max-width:720px}
+.hero-actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn {
-  display: inline-block;
-  padding: 12px 18px;
-  background: var(--wine);
-  color: white;
-  text-decoration: none;
-  font: 13px Arial, sans-serif;
-  border: 1px solid var(--wine);
-  transition: background .2s ease;
+  display:inline-block;
+  padding:11px 17px;
+  background:var(--wine);
+  color:white;
+  text-decoration:none;
+  font:13px Arial,sans-serif;
+  border:1px solid var(--wine);
+  border-radius:5px;
+  transition:.2s;
 }
+.btn:hover {background:#4d1928}
+.btn.secondary {background:transparent;color:var(--wine)}
 
-.btn:hover {
-  background: #4e1929;
-}
-
-.btn.secondary {
-  background: transparent;
-  color: var(--wine);
-}
-
-.btn.secondary:hover {
-  background: #eee1ce;
-}
-
-/* =================================
-   GENERAL SECTIONS
-================================= */
-
-section {
-  padding: 54px 0;
-}
-
-.section-head {
-  margin-bottom: 25px;
-}
-
+/* GENERAL SECTIONS */
+section {padding:54px 0}
+.section-head {margin-bottom:25px}
 .section-head h2 {
-  font-size: 34px;
-  font-weight: normal;
-  color: var(--wine);
-  margin: 5px 0;
+  font-size:34px;
+  font-weight:normal;
+  color:var(--wine);
+  margin:5px 0;
 }
+.section-head p {color:var(--muted);max-width:760px;margin:0}
 
-.section-head p {
-  color: var(--muted);
-  max-width: 760px;
-  margin: 0;
-}
-
-/* =================================
-   STUDY SHELVES
-================================= */
-
+/* STUDY SHELVES */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
-
 .card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 22px;
-  min-height: 175px;
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:22px;
+  min-height:175px;
+  border-radius:7px;
 }
+.num {font:11px Arial,sans-serif;letter-spacing:.15em;color:var(--gold)}
+.card h3 {font-size:21px;font-weight:normal;color:var(--wine);margin:8px 0}
+.card p {font-size:15px;color:var(--muted);margin:0}
 
-.num {
-  font: 11px Arial, sans-serif;
-  letter-spacing: .15em;
-  color: var(--gold);
-}
-
-.card h3 {
-  font-size: 21px;
-  font-weight: normal;
-  color: var(--wine);
-  margin: 8px 0;
-}
-
-.card p {
-  font-size: 15px;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* =================================
-   PAPERS, SPREADSHEET AND VIDEO CARDS
-================================= */
-
+/* RESOURCE PANELS */
 .note {
-  background: #efe5d4;
-  border-left: 3px solid var(--gold);
-  padding: 17px 20px;
-  margin-top: 22px;
-  color: #51463e;
+  background:#efe5d4;
+  border-left:3px solid var(--gold);
+  padding:17px 20px;
+  margin-top:22px;
+  color:#51463e;
 }
-
 .paper {
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 22px;
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:22px;
+  border-radius:8px;
+  margin-bottom:22px;
 }
-
 .paper-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
 }
-
-.paper h3 {
-  font-size: 24px;
-  font-weight: normal;
-  color: var(--wine);
-  margin: 0;
-}
-
+.paper h3 {font-size:23px;font-weight:normal;color:var(--wine);margin:0}
 .paper iframe {
-  width: 100%;
-  height: 680px;
-  border: 1px solid var(--line);
-  margin-top: 18px;
-  background: white;
+  display:block;
+  width:100%;
+  height:500px;
+  border:1px solid var(--line);
+  margin-top:18px;
+  background:white;
+  border-radius:5px;
+}
+#papers .paper iframe {height:680px}
+
+/* ONLINE TESTS */
+.test-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.test-card {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:205px;
+  transition:transform .2s,box-shadow .2s;
+}
+.test-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 9px 22px rgba(60,35,35,.09);
+}
+.test-number {
+  font:11px Arial,sans-serif;
+  letter-spacing:.14em;
+  color:var(--gold);
+  font-weight:bold;
+}
+.test-card h3 {
+  font-size:20px;
+  line-height:1.4;
+  font-weight:normal;
+  color:var(--wine);
+  margin:9px 0;
+}
+.test-card p {font-size:14px;color:var(--muted);margin:0 0 17px}
+.test-card .btn {align-self:flex-start}
+.test-note {
+  margin-top:24px;
+  padding:18px 20px;
+  background:#efe5d4;
+  border-left:3px solid var(--gold);
+  color:#51463e;
 }
 
-/* =================================
-   VIDEO CLASSROOM
-================================= */
-
-#videos .video-player {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  display: block;
-  border: 0;
-  margin-top: 18px;
-  background: #000;
-}
-
-#videos .paper {
-  margin-bottom: 25px;
-}
-
-/* =================================
-   STUDY METHOD
-================================= */
-
+/* STUDY METHOD */
 .practice {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
-
 .practice article {
-  padding: 22px;
-  border: 1px solid var(--line);
-  background: var(--card);
+  padding:22px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:7px;
 }
-
 .practice h3 {
-  margin: 0 0 8px;
-  color: var(--wine);
-  font-weight: normal;
-  font-size: 22px;
+  margin:0 0 8px;
+  color:var(--wine);
+  font-weight:normal;
+  font-size:22px;
 }
 
-/* =================================
-   CONNECT WITH US
-================================= */
-
-.connect-section {
-  padding: 75px 0;
-  background: #f8f3eb;
-}
-
-.connect-section .section-head {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.connect-section .section-head h2 {
-  color: #542638;
-  font-size: clamp(28px, 4vw, 38px);
-  margin: 10px 0;
-}
-
+/* CONNECT */
+.connect-section {padding:65px 0;background:#f8f3eb}
+.connect-section .section-head {text-align:center;margin-bottom:35px}
+.connect-section .section-head h2 {color:#542638;font-size:clamp(28px,4vw,38px);margin:10px 0}
 .connect-section .section-head p {
-  color: #766a67;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.7;
+  color:#766a67;max-width:650px;margin:0 auto;line-height:1.7;
 }
-
 .connect-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
 }
-
 .connect-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 23px 20px;
-  background: #fff;
-  border: 1px solid #eadfda;
-  border-radius: 15px;
-  text-decoration: none;
-  color: #49343a;
-  box-shadow: 0 5px 18px rgba(65, 35, 45, 0.05);
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px;
+  background:white;
+  border:1px solid #eadfda;
+  border-radius:12px;
+  text-decoration:none;
+  color:#49343a;
+  box-shadow:0 5px 18px rgba(65,35,45,.05);
+  transition:transform .25s,box-shadow .25s;
 }
-
 .connect-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(65, 35, 45, 0.12);
-  border-color: #9b6678;
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(65,35,45,.12);
 }
-
 .connect-icon {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 13px;
-  color: white;
-  font-size: 23px;
-  font-weight: bold;
+  width:50px;height:50px;min-width:50px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:12px;color:white;font-size:22px;font-weight:bold;
 }
+.facebook {background:#1877f2}
+.instagram {background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+.linkedin {background:#0a66c2}
+.x-twitter {background:#111}
+.academia {background:#414141}
+.email {background:#8a4058}
+.connect-info h3 {font-size:17px;margin:0 0 4px;color:#542638}
+.connect-info p {font:13px Arial,sans-serif;margin:0;color:#827477;overflow-wrap:anywhere}
+.connect-footer {text-align:center;margin-top:30px;color:#827477;font-size:14px}
 
-.connect-icon.facebook {
-  background: #1877f2;
-}
-
-.connect-icon.instagram {
-  background: linear-gradient(
-    45deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5
-  );
-}
-
-.connect-icon.linkedin {
-  background: #0a66c2;
-}
-
-.connect-icon.x-twitter {
-  background: #111;
-}
-
-.connect-icon.academia {
-  background: #414141;
-}
-
-.connect-icon.email {
-  background: #8a4058;
-}
-
-.connect-info h3 {
-  font-size: 17px;
-  margin: 0 0 5px;
-  color: #542638;
-}
-
-.connect-info p {
-  font-size: 13px;
-  line-height: 1.5;
-  margin: 0;
-  color: #827477;
-  overflow-wrap: anywhere;
-}
-
-.connect-footer {
-  text-align: center;
-  margin-top: 30px;
-  color: #827477;
-  font-size: 14px;
-}
-
-/* =================================
-   FOOTER
-================================= */
-
+/* FOOTER */
 footer {
-  background: #302725;
-  color: #f7f1e6;
-  padding: 28px 0;
-  font-size: 14px;
-  text-align: center;
+  background:#302725;
+  color:#f7f1e6;
+  padding:25px 0;
+  font-size:14px;
+  text-align:center;
 }
 
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
-
+/* RESPONSIVE */
 @media(max-width:800px) {
-
-  .top {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .connect-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
+  .top {align-items:flex-start;flex-direction:column}
+  .grid,.connect-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
-@media(max-width:760px) {
-
-  nav {
-    gap: 12px;
-  }
-
+@media(max-width:600px) {
+  .grid,.practice,.test-grid,.connect-grid {grid-template-columns:1fr}
+  .hero {padding:55px 0}
+  .lead {font-size:17px}
+  .section-head h2 {font-size:29px}
+  .paper {padding:15px}
+  .paper iframe,#papers .paper iframe {height:350px}
+  nav {gap:12px}
 }
-
-@media(max-width:520px) {
-
-  .grid,
-  .practice,
-  .connect-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 55px 0;
-  }
-
-  .lead {
-    font-size: 17px;
-  }
-
-  .paper {
-    padding: 16px;
-  }
-
-  .paper h3 {
-    font-size: 21px;
-  }
-
-  .connect-card {
-    padding: 18px;
-  }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- =================================
-     HEADER
-================================= -->
-
 <header>
   <div class="wrap top">
-
     <div class="brand">
       The Reading Room
       <small>SHIVA Institute of English</small>
     </div>
 
     <nav aria-label="Main navigation">
-
-      <a href="#shelves">Study shelves</a>
+      <a href="#shelves">Study Shelves</a>
+      <a href="#tests">Online Tests</a>
       <a href="#videos">Video Lectures</a>
-      <a href="#papers">Solved papers</a>
-      <a href="#spreadsheet">Study spreadsheet</a>
-      <a href="#method">How to study</a>
+      <a href="#papers">Solved Papers</a>
+      <a href="#spreadsheet">Spreadsheet</a>
+      <a href="#method">How to Study</a>
       <a href="#connect">Connect</a>
-
       <a href="https://shiva-institute-of-english.yolasite.com/"
-         target="_blank"
-         rel="noopener noreferrer">
-        SHIVA Institute
-      </a>
-
+         target="_blank" rel="noopener noreferrer">SHIVA Institute</a>
     </nav>
-
   </div>
 </header>
 
 <main>
 
-<!-- =================================
-     HERO SECTION
-================================= -->
-
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-
-    <div class="eyebrow">
-      A focused study space for English Literature
-    </div>
-
-    <h1>
-      Read closely.<br>
-      Think critically.
-    </h1>
-
+    <div class="eyebrow">A focused study space for English Literature</div>
+    <h1>Read closely.<br>Think critically.</h1>
     <p class="lead">
       A structured reading room for UGC NET English aspirants,
       bringing literary periods, authors, works, criticism,
-      theory and examination practice into one place.
+      theory, video lectures and online examination practice
+      into one place.
     </p>
-
     <div class="hero-actions">
-
-      <a class="btn" href="#shelves">
-        Explore study shelves
-      </a>
-
-      <a class="btn secondary" href="#papers">
-        Open solved-paper library
-      </a>
-
-      <a class="btn secondary" href="#spreadsheet">
-        Open study spreadsheet
-      </a>
-
+      <a class="btn" href="#shelves">Explore Study Shelves</a>
+      <a class="btn secondary" href="#tests">Attempt Online Tests</a>
+      <a class="btn secondary" href="#videos">Watch Video Lectures</a>
     </div>
-
   </div>
 </section>
 
-<!-- =================================
-     NINE STUDY SHELVES
-================================= -->
-
+<!-- STUDY SHELVES -->
 <section id="shelves">
   <div class="wrap">
-
     <div class="section-head">
-
       <div class="eyebrow">The subject library</div>
-
-      <h2>Study by subject</h2>
-
+      <h2>Study by Subject</h2>
       <p>
         Use these shelves to organise your preparation.
-        Each shelf identifies a major area for systematic
-        revision; the descriptions are a guide to topics,
-        not a claim that separate question banks are already included.
+        Each shelf identifies a major area for systematic revision.
       </p>
-
     </div>
 
     <div class="grid">
-
       <article class="card">
         <span class="num">SHELF 01</span>
         <h3>British Literary History</h3>
-        <p>
-          Renaissance, Elizabethan and Jacobean writing,
-          Puritan age, Restoration, Augustan, Romantic,
-          Victorian and Modern periods.
-        </p>
+        <p>Renaissance, Elizabethan and Jacobean writing, Puritan age, Restoration, Augustan, Romantic, Victorian and Modern periods.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 02</span>
         <h3>Literary Criticism &amp; Theory</h3>
-        <p>
-          Classical criticism, Renaissance criticism,
-          Romantic and Victorian critics, New Criticism,
-          Formalism, Structuralism, Deconstruction
-          and Postcolonial criticism.
-        </p>
+        <p>Classical criticism, Romantic critics, New Criticism, Formalism, Structuralism, Deconstruction and Postcolonial criticism.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 03</span>
         <h3>Poetry &amp; Prosody</h3>
-        <p>
-          Poets, poems, forms, metres, rhythm,
-          figures of speech, sonnets, elegies,
-          odes and key poetic concepts.
-        </p>
+        <p>Poets, poems, forms, metres, rhythm, figures of speech, sonnets, elegies, odes and poetic concepts.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 04</span>
         <h3>Drama &amp; Theatre</h3>
-        <p>
-          Shakespeare, revenge tragedy, comedy,
-          Restoration drama, modern drama,
-          playwrights, characters and theatre movements.
-        </p>
+        <p>Shakespeare, revenge tragedy, comedy, Restoration drama, modern drama, playwrights and theatre movements.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 05</span>
         <h3>Fiction &amp; Prose</h3>
-        <p>
-          Novelists, novels, characters, narrative forms,
-          essays, biographies, prose works
-          and publication details.
-        </p>
+        <p>Novelists, novels, characters, narrative forms, essays, biographies and prose works.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 06</span>
         <h3>Indian &amp; World Literature</h3>
-        <p>
-          Indian writing in English, diaspora,
-          African, Caribbean, Canadian and other
-          world-literature references.
-        </p>
+        <p>Indian writing in English, diaspora, African, Caribbean, Canadian and other world-literature references.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 07</span>
         <h3>Linguistics &amp; Language</h3>
-        <p>
-          Language concepts and terminology,
-          branches of linguistics, language acquisition
-          and major linguistic distinctions.
-        </p>
+        <p>Language concepts, branches of linguistics, language acquisition and major linguistic distinctions.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 08</span>
         <h3>Chronology &amp; Matching</h3>
-        <p>
-          Arrange authors, works, literary periods
-          and movements; practise match-the-following
-          and sequence-based revision.
-        </p>
+        <p>Arrange authors, works, literary periods and movements; practise matching and sequence-based revision.</p>
       </article>
-
       <article class="card">
         <span class="num">SHELF 09</span>
         <h3>Previous-Year Practice</h3>
-        <p>
-          Attempt year-labelled questions under timed
-          conditions, review the key and maintain
-          an error log.
-        </p>
+        <p>Attempt year-labelled questions under timed conditions, review the key and maintain an error log.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- UGC NET ONLINE TESTS -->
+<section id="tests">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Test your preparation</div>
+      <h2>UGC NET English Online Practice Tests</h2>
+      <p>
+        Select a test below to practise literary chronology,
+        literary theory, criticism and other important areas
+        of English Literature. Click the button to open the
+        Google Form and submit your answers.
+      </p>
+    </div>
+
+    <div class="test-grid">
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 01</span>
+          <h3>UGC NET English Literature – Chronological MCQ Test</h3>
+          <p>Practise chronology-based questions on authors, works and literary developments.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSffhjuQKrIG3kSquBsu6an_SCjI7wTIowyDZkf5_aIMcuiqEQ/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 01</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 02</span>
+          <h3>UGC NET English – Literary Theory Chronology Test (1934–1970)</h3>
+          <p>Test your knowledge of important developments in literary theory and criticism.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfmK30wO5553OgytlVNF79aabnikoSIOcVj0fk3KDP5Dm9rGg/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 02</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 03</span>
+          <h3>UGC NET English Literature – Literary Theory and Criticism</h3>
+          <p>Revise major critics, theoretical concepts and schools of criticism.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeWlWxJM5B_PBAafh9Odqoy0AAJMGekg7DPT_G04bXJ8k_iwg/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 03</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 04</span>
+          <h3>UGC NET English Literature – Literary Theory and Criticism</h3>
+          <p>Strengthen your understanding of literary criticism through MCQ practice.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc__sjU5yRKHsyptDaG87bGNmTHRZrChnRlmp-4_Fr6cSpVcQ/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 04</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 05</span>
+          <h3>UGC NET English – Literary Theory Chronology Test (1972–1985)</h3>
+          <p>Practise chronology and important developments in modern literary theory.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdunMHAr9c2sT9BLCiaLw9KRiAP5nCWbINbaKkc9eaZlOnlow/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 05</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 06</span>
+          <h3>UGC NET English – Shakespeare and Literary Criticism – Quiz 4</h3>
+          <p>Test your understanding of Shakespeare and related critical perspectives.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSet2ZQIypBj9HNoeAoeXQYfntpcFTwLPjdIEEUw2jWXo58NrQ/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 06</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 07</span>
+          <h3>UGC NET English Literature – Quiz 2: Literary Theory and Criticism</h3>
+          <p>Check your understanding of key ideas, critics and theoretical approaches.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeLLh1lw8luK2nJiX6LBIZwi6zS4x9UeQ-6isDVef3XQfd5BA/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 07</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ONLINE TEST 08</span>
+          <h3>UGC NET English Literature – Literary Theory and Criticism</h3>
+          <p>Continue your practice with another set of questions on literary theory and criticism.</p>
+        </div>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSckCNtoQ639hfL-MpV7FMQKv-EXanhuLkV9JTHwk7orsoKQZg/viewform"
+           target="_blank" rel="noopener noreferrer">Attempt Test 08</a>
       </article>
 
     </div>
 
+    <div class="test-note">
+      <strong>Instructions for students:</strong>
+      Choose a test, read each question carefully and submit
+      your responses through Google Forms. Check the form's
+      instructions for its scoring and feedback arrangements.
+      Your ability to access a form depends on its sharing settings.
+    </div>
   </div>
 </section>
 
-<!-- =================================
-     SOLVED PAPERS PDF
-================================= -->
-
+<!-- SOLVED PAPERS -->
 <section id="papers">
   <div class="wrap">
-
     <div class="section-head">
-
       <div class="eyebrow">Digital paper library</div>
-
-      <h2>UGC NET English solved papers</h2>
-
+      <h2>UGC NET English Solved Papers</h2>
       <p>
         The supplied collection is titled
-        <em>Question Bank: The Depth Unlimited —
-        UGC NET English Literature</em>.
-        Its opening pages describe solved papers
-        with answer keys for 1994–2014.
+        <em>Question Bank: The Depth Unlimited – UGC NET English Literature</em>.
+        Its opening pages describe solved papers with answer keys for 1994–2014.
       </p>
-
     </div>
 
     <div class="paper">
-
       <div class="paper-head">
-
-        <h3>Solved papers, 1994–2014</h3>
-
+        <h3>Solved Papers, 1994–2014</h3>
         <a class="btn"
            href="assets/ugc-net-english-solved-papers-1994-2014.pdf"
-           target="_blank"
-           rel="noopener">
-          Open / download PDF
-        </a>
-
+           target="_blank" rel="noopener noreferrer">Open / Download PDF</a>
       </div>
-
       <iframe
         src="assets/ugc-net-english-solved-papers-1994-2014.pdf"
         title="UGC NET English solved papers PDF">
       </iframe>
-
       <p style="color:var(--muted);font-size:14px">
-        If the preview does not appear on your device,
-        use the Open / download PDF link. Verify question
-        wording and answer keys before using them in
-        formal study material.
+        If the preview does not appear on your device, use the
+        Open / Download PDF link. Verify question wording and
+        answer keys before using them in formal study material.
       </p>
-
     </div>
 
     <div class="note">
-
       <strong>Resource note:</strong>
-      This is a historical practice collection, not a
-      substitute for the current official UGC NET syllabus,
-      notifications or updated examination pattern.
-      Please ensure you have permission to redistribute
-      the supplied PDF publicly before publishing it.
-
+      This is a historical practice collection, not a substitute
+      for the current official UGC NET syllabus or examination pattern.
+      Ensure you have permission to redistribute the PDF publicly.
     </div>
-
   </div>
 </section>
 
-<!-- =================================
-     GOOGLE SPREADSHEET
-================================= -->
-
+<!-- GOOGLE SPREADSHEET -->
 <section id="spreadsheet">
   <div class="wrap">
-
     <div class="section-head">
-
       <div class="eyebrow">Additional study resource</div>
-
       <h2>UGC NET English Study Spreadsheet</h2>
-
-      <p>
-        Access this supplementary Google Sheets resource
-        for your UGC NET English preparation.
-      </p>
-
+      <p>Access this supplementary Google Sheets resource for your preparation.</p>
     </div>
 
     <div class="paper">
-
       <div class="paper-head">
-
         <h3>Study and Revision Spreadsheet</h3>
-
         <a class="btn"
            href="https://docs.google.com/spreadsheets/d/1psn5DBQQBodxdk6WLIdfqxmb8zzZLj3lO3p2z4GJpwE/edit?gid=1231975242#gid=1231975242"
-           target="_blank"
-           rel="noopener">
-          Open Google Spreadsheet
-        </a>
-
+           target="_blank" rel="noopener noreferrer">Open Google Spreadsheet</a>
       </div>
-
       <p style="color:var(--muted);font-size:14px;margin-top:15px">
-        Click the button above to open the spreadsheet
-        in a new tab. Access depends on the Google Sheet's
-        sharing permissions.
+        Access depends on the Google Sheet's sharing permissions.
       </p>
-
     </div>
-
   </div>
 </section>
 
-<!-- =================================
-     ENGLISH LITERATURE VIDEO CLASSROOM
-================================= -->
-
+<!-- VIDEO CLASSROOM -->
 <section id="videos">
   <div class="wrap">
-
     <div class="section-head">
-
       <div class="eyebrow">SHIVA Institute of English</div>
-
       <h2>English Literature Video Classroom</h2>
-
       <p>
-        Explore video lectures, literary explanations and
-        discussions on poetry, prose and drama.
-        Watch the lessons directly in The Reading Room.
+        Explore video lectures, literary explanations and discussions
+        on poetry, prose, drama and literary criticism.
       </p>
-
     </div>
 
-    <!-- VIDEO 1: ABISARA -->
-
     <div class="paper">
-
       <div class="paper-head">
-
         <h3>01. Abisara (The Tryst)</h3>
-
-        <a class="btn"
-           href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
-           target="_blank"
-           rel="noopener noreferrer">
-          Watch on YouTube
-        </a>
-
+        <a class="btn" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+           target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
       </div>
-
-      <p>
-        <strong>Rabindranath Tagore</strong> |
-        Detailed Explanation &amp; Discussion
-      </p>
-
+      <p><strong>Rabindranath Tagore</strong> | Detailed Explanation &amp; Discussion</p>
       <iframe
-        class="video-player"
         src="https://www.youtube-nocookie.com/embed/zGGJOO9zNsA"
         title="Abisara The Tryst by Rabindranath Tagore"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
     </div>
 
-    <!-- VIDEO 2: BLOOD KNOT -->
-
     <div class="paper">
-
       <div class="paper-head">
-
         <h3>02. Blood Knot</h3>
-
-        <a class="btn"
-           href="https://www.youtube.com/watch?v=b_McfKICOyY"
-           target="_blank"
-           rel="noopener noreferrer">
-          Watch on YouTube
-        </a>
-
+        <a class="btn" href="https://www.youtube.com/watch?v=b_McfKICOyY"
+           target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
       </div>
-
-      <p>
-        <strong>Athol Fugard</strong> |
-        Discussion of the Play
-      </p>
-
+      <p><strong>Athol Fugard</strong> | Discussion of the Play</p>
       <iframe
-        class="video-player"
         src="https://www.youtube-nocookie.com/embed/b_McfKICOyY"
         title="Blood Knot by Athol Fugard"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
     </div>
 
-    <!-- COMPLETE BLOOD KNOT PLAYLIST -->
-
     <div class="paper">
-
       <div class="paper-head">
-
         <h3>03. Blood Knot – Complete Video Series</h3>
-
         <a class="btn"
            href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
-           target="_blank"
-           rel="noopener noreferrer">
-          Open Full Playlist
-        </a>
-
+           target="_blank" rel="noopener noreferrer">Open Full Playlist</a>
       </div>
-
-      <p>
-        Watch the complete Blood Knot video series.
-        Select individual episodes from the playlist.
-      </p>
-
+      <p>Watch the complete Blood Knot video series. Select individual episodes from the playlist.</p>
       <iframe
-        class="video-player"
         src="https://www.youtube-nocookie.com/embed/videoseries?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
         title="Blood Knot Complete Video Playlist"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
     </div>
 
-    <!-- CHANNEL UPLOADS PLAYLIST -->
-
     <div class="paper">
-
       <div class="paper-head">
-
-        <h3>04. Teach &amp; Thrive – Video Library</h3>
-
-        <a class="btn"
-           href="https://www.youtube.com/@TheSibabrata"
-           target="_blank"
-           rel="noopener noreferrer">
-          Visit YouTube Channel
-        </a>
-
+        <h3>04. The Sibabrata – YouTube Video Library</h3>
+        <a class="btn" href="https://www.youtube.com/@TheSibabrata"
+           target="_blank" rel="noopener noreferrer">Visit YouTube Channel</a>
       </div>
-
-      <p>
-        Explore the public video uploads from the
-        Teach &amp; Thrive YouTube channel.
-        New public uploads may appear automatically
-        in this playlist.
-      </p>
-
+      <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
       <iframe
-        class="video-player"
         src="https://www.youtube-nocookie.com/embed/videoseries?list=UUkQuqoH08mGrk3OLjdDzJfQ"
-        title="Teach and Thrive YouTube Uploads"
+        title="The Sibabrata YouTube Video Library"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
     </div>
 
     <div class="note">
-
       <strong>Learning suggestion:</strong>
-      Watch each lecture carefully, make notes on the
-      literary concepts and characters, and revise the
-      important points before attempting UGC NET questions.
-
+      Watch each lecture carefully, make notes on literary concepts
+      and characters, and revise the important points before
+      attempting UGC NET questions.
     </div>
-
-    <p style="text-align:center; margin-top:25px;">
-
-      <a class="btn"
-         href="https://www.youtube.com/@TheSibabrata"
-         target="_blank"
-         rel="noopener noreferrer">
-        Explore More Lectures – Teach &amp; Thrive
-      </a>
-
-    </p>
-
   </div>
 </section>
 
-<!-- =================================
-     HOW TO STUDY
-================================= -->
-
+<!-- HOW TO STUDY -->
 <section id="method">
   <div class="wrap">
-
     <div class="section-head">
-
       <div class="eyebrow">A practical routine</div>
-
-      <h2>How to use the Reading Room</h2>
-
-      <p>
-        Build a repeatable cycle rather than reading
-        topics without testing recall.
-      </p>
-
+      <h2>How to Use the Reading Room</h2>
+      <p>Build a repeatable cycle rather than reading topics without testing recall.</p>
     </div>
 
     <div class="practice">
-
       <article>
-        <h3>01 — Read and map</h3>
-        <p>
-          Choose one shelf. Make a compact timeline
-          of authors, works, dates, movements
-          and key terms.
-        </p>
+        <h3>01 — Read and Map</h3>
+        <p>Choose one shelf. Make a compact timeline of authors, works, dates, movements and key terms.</p>
       </article>
-
       <article>
-        <h3>02 — Retrieve from memory</h3>
-        <p>
-          Close your notes and recall names, titles,
-          concepts and chronological relationships
-          before checking.
-        </p>
+        <h3>02 — Retrieve from Memory</h3>
+        <p>Close your notes and recall names, titles, concepts and chronological relationships before checking.</p>
       </article>
-
       <article>
-        <h3>03 — Practise questions</h3>
-        <p>
-          Attempt relevant previous-year questions
-          without looking at the answer key.
-          Note why each distractor is incorrect.
-        </p>
+        <h3>03 — Practise Questions</h3>
+        <p>Attempt online tests and previous-year questions without looking at the answer key.</p>
       </article>
-
       <article>
-        <h3>04 — Review errors</h3>
-        <p>
-          Maintain an error log and revisit weak topics
-          at spaced intervals. Cross-check facts
-          with reliable references.
-        </p>
+        <h3>04 — Review Errors</h3>
+        <p>Maintain an error log and revisit weak topics at spaced intervals. Cross-check facts with reliable references.</p>
       </article>
+    </div>
+  </div>
+</section>
 
+<!-- CONNECT -->
+<section id="connect" class="connect-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SHIVA Institute of English</div>
+      <h2>Connect With Us</h2>
+      <p>
+        Connect, collaborate and stay updated with English Literature,
+        Linguistics, academic research and UGC NET learning resources.
+      </p>
     </div>
 
+    <div class="connect-grid">
+      <a class="connect-card" href="https://www.facebook.com/sibabrata.nayak.3/"
+         target="_blank" rel="noopener noreferrer">
+        <div class="connect-icon facebook">f</div>
+        <div class="connect-info"><h3>Facebook</h3><p>Follow our Facebook profile</p></div>
+      </a>
+
+      <a class="connect-card" href="https://www.instagram.com/sibabrata_nayak/"
+         target="_blank" rel="noopener noreferrer">
+        <div class="connect-icon instagram">◎</div>
+        <div class="connect-info"><h3>Instagram</h3><p>Connect through Instagram</p></div>
+      </a>
+
+      <a class="connect-card" href="https://www.linkedin.com/in/sibabratanayak"
+         target="_blank" rel="noopener noreferrer">
+        <div class="connect-icon linkedin">in</div>
+        <div class="connect-info"><h3>LinkedIn</h3><p>Professional and academic network</p></div>
+      </a>
+
+      <a class="connect-card" href="https://x.com/sibabratat27"
+         target="_blank" rel="noopener noreferrer">
+        <div class="connect-icon x-twitter">X</div>
+        <div class="connect-info"><h3>X (Twitter)</h3><p>Follow updates and discussions</p></div>
+      </a>
+
+      <a class="connect-card" href="https://efluniversity.academia.edu/sibabratanayak"
+         target="_blank" rel="noopener noreferrer">
+        <div class="connect-icon academia">A</div>
+        <div class="connect-info"><h3>Academia.edu</h3><p>Academic profile and research</p></div>
+      </a>
+
+      <a class="connect-card" href="mailto:hr_general@rediffmail.com">
+        <div class="connect-icon email">✉</div>
+        <div class="connect-info"><h3>Official Email</h3><p>hr_general@rediffmail.com</p></div>
+      </a>
+
+      <a class="connect-card" href="mailto:lecture.in.english@gmail.com">
+        <div class="connect-icon email">✉</div>
+        <div class="connect-info"><h3>Office Email</h3><p>lecture.in.english@gmail.com</p></div>
+      </a>
+    </div>
+
+    <div class="connect-footer">
+      SHIVA Institute of English · The Reading Room<br>
+      Learn · Research · Connect
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- =================================
-     CONNECT WITH US
-================================= -->
-
-<section id="connect" class="connect-section">
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <div class="eyebrow">SHIVA Institute of English</div>
-
-      <h2>Connect With Us</h2>
-
-      <p>
-        Connect, collaborate and stay updated with English Literature,
-        Linguistics, academic research and UGC NET learning resources.
-      </p>
-
-    </div>
-
-    <div class="connect-grid">
-
-      <!-- FACEBOOK -->
-
-      <a class="connect-card"
-         href="https://www.facebook.com/sibabrata.nayak.3/"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="connect-icon facebook">f</div>
-
-        <div class="connect-info">
-          <h3>Facebook</h3>
-          <p>Follow our Facebook profile</p>
-        </div>
-
-      </a>
-
-      <!-- INSTAGRAM -->
-
-      <a class="connect-card"
-         href="https://www.instagram.com/sibabrata_nayak/"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="connect-icon instagram">◎</div>
-
-        <div class="connect-info">
-          <h3>Instagram</h3>
-          <p>Connect through Instagram</p>
-        </div>
-
-      </a>
-
-      <!-- LINKEDIN -->
-
-      <a class="connect-card"
-         href="https://www.linkedin.com/in/sibabratanayak"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="connect-icon linkedin">in</div>
-
-        <div class="connect-info">
-          <h3>LinkedIn</h3>
-          <p>Professional and academic network</p>
-        </div>
-
-      </a>
-
-      <!-- X / TWITTER -->
-
-      <a class="connect-card"
-         href="https://x.com/sibabratat27"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="connect-icon x-twitter">X</div>
-
-        <div class="connect-info">
-          <h3>X (Twitter)</h3>
-          <p>Follow updates and discussions</p>
-        </div>
-
-      </a>
-
-      <!-- ACADEMIA.EDU -->
-
-      <a class="connect-card"
-         href="https://efluniversity.academia.edu/sibabratanayak"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        <div class="connect-icon academia">A</div>
-
-        <div class="connect-info">
-          <h3>Academia.edu</h3>
-          <p>Academic profile and research</p>
-        </div>
-
-      </a>
-
-      <!-- OFFICIAL EMAIL -->
-
-      <a class="connect-card"
-         href="mailto:hr_general@rediffmail.com">
-
-        <div class="connect-icon email">✉</div>
-
-        <div class="connect-info">
-          <h3>Official Email</h3>
-          <p>hr_general@rediffmail.com</p>
-        </div>
-
-      </a>
-
-      <!-- OFFICE EMAIL -->
-
-      <a class="connect-card"
-         href="mailto:lecture.in.english@gmail.com">
-
-        <div class="connect-icon email">✉</div>
-
-        <div class="connect-info">
-          <h3>Office Email</h3>
-          <p>lecture.in.english@gmail.com</p>
-        </div>
-
-      </a>
-
-    </div>
-
-    <div class="connect-footer">
-
-      SHIVA Institute of English · The Reading Room
-
-      <br>
-
-      Learn · Research · Connect
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =================================
-     FOOTER
-================================= -->
-
 <footer>
-
   <div class="wrap">
-
     The Reading Room · SHIVA Institute of English ·
     Mancheswar, Bhubaneswar, Odisha
-
   </div>
-
 </footer>
 
 </body>
 </html>
-```
