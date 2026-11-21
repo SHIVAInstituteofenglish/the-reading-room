@@ -117,7 +117,20 @@ header {
   object-fit:contain;
 }
 
-.brand small {
+.connect-footer-brand {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.connect-footer-brand img {
+  width:30px;
+  height:auto;
+  object-fit:contain;
+}
+  .brand small {
   display:block;
   color:var(--muted);
   font-size:11px;
@@ -1487,11 +1500,12 @@ footer {
     </div>
 
     <div class="connect-footer">
-      SHIVA Institute of English · The Reading Room<br>
-      Learn · Research · Connect
-    </div>
+  <div class="connect-footer-brand">
+    <img src="SHIVA.png" alt="SHIVA Institute of English logo">
+    <span>SHIVA Institute of English · The Reading Room</span>
   </div>
-</section>
+  <div>Learn · Research · Connect</div>
+</div>
 
 </main>
 
