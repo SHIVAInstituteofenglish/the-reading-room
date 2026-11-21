@@ -48,9 +48,34 @@ header {
   color:var(--wine);
   font-weight:bold;
 }
+  .brand-logo {
+  width:65px;
+  height:65px;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-area {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+  .footer-brand {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.footer-logo {
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
 .brand small {
   display:block;
-  color:var(--muted);
+  color:var(--muted)
   font-size:11px;
   letter-spacing:.16em;
   font-weight:normal;
@@ -1419,8 +1444,14 @@ footer {
 
 <footer>
   <div class="wrap">
-    The Reading Room · SHIVA Institute of English ·
-    Mancheswar, Bhubaneswar, Odisha
+    <div class="footer-brand">
+      <img src="SHIVA.png.png" alt="SHIVA Institute of English logo" class="footer-logo">
+      <div>
+        <strong>The Reading Room · SHIVA Institute of English</strong><br>
+        Mancheswar, Bhubaneswar, Odisha<br>
+        <small>© 2026 SHIVA Institute of English. All rights reserved.</small>
+      </div>
+    </div>
   </div>
 </footer>
 
