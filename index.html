@@ -145,12 +145,13 @@ nav {
 }
 nav a {text-decoration:none;color:var(--ink)}
 nav a:hover {color:var(--wine);text-decoration:underline}
-  .colour-nav {
-  display:flex;
-  flex-wrap:wrap;
+.colour-nav {
+  display:grid;
+  grid-template-columns:repeat(2, max-content);
   gap:10px;
+  justify-content:end;
   align-items:center;
-  justify-content:center;
+  margin-left:auto;
 }
 
 .colour-nav a {
