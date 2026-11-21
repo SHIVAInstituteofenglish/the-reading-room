@@ -101,6 +101,22 @@ header {
   height:24px;
   object-fit:contain;
 }
+
+.connect-brand {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-align:center;
+}
+
+.connect-logo {
+  width:65px;
+  height:auto;
+  object-fit:contain;
+}
+
 .brand small {
   display:block;
   color:var(--muted);
@@ -1417,7 +1433,10 @@ footer {
 <section id="connect" class="connect-section">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">SHIVA Institute of English</div>
+      <div class="eyebrow connect-brand">
+  <img src="SHIVA.png" alt="SHIVA Institute of English logo" class="connect-logo">
+  <span>SHIVA Institute of English</span>
+</div>
       <h2>Connect With Us</h2>
       <p>
         Connect, collaborate and stay updated with English Literature,
