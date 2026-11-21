@@ -145,6 +145,42 @@ nav {
 }
 nav a {text-decoration:none;color:var(--ink)}
 nav a:hover {color:var(--wine);text-decoration:underline}
+  .colour-nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+}
+
+.colour-nav a {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:9px;
+  color:#fff;
+  font-weight:bold;
+  font-size:13px;
+  text-decoration:none;
+  text-align:center;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.colour-nav a:hover {
+  color:#fff;
+  text-decoration:none;
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+.colour-nav .nav-shelves {background:#7B3548;}
+.colour-nav .nav-tests {background:#285A83;}
+.colour-nav .nav-exams {background:#28745C;}
+.colour-nav .nav-videos {background:#7651A0;}
+.colour-nav .nav-papers {background:#A65B2A;}
+.colour-nav .nav-spreadsheet {background:#397B82;}
+.colour-nav .nav-method {background:#8A6730;}
+.colour-nav .nav-connect {background:#A04468;}
+.colour-nav .nav-shiva {background:#424B63;}
 
 /* HERO */
 .hero {
@@ -416,18 +452,18 @@ footer {
   </div>
 </div>
 
-    <nav aria-label="Main navigation">
-      <a href="#shelves">Study Shelves</a>
-      <a href="#tests">Online Tests</a>
-      <a href="#competitive-exams">Competitive Exams</a>
-      <a href="#videos">Video Lectures</a>
-      <a href="#papers">Solved Papers</a>
-      <a href="#spreadsheet">Spreadsheet</a>
-      <a href="#method">How to Study</a>
-      <a href="#connect">Connect</a>
-      <a href="https://shiva-institute-of-english.yolasite.com/"
-         target="_blank" rel="noopener noreferrer">SHIVA Institute</a>
-    </nav>
+    <nav aria-label="Main navigation" class="colour-nav">
+  <a href="#shelves" class="nav-shelves">Study Shelves</a>
+  <a href="#tests" class="nav-tests">Online Tests</a>
+  <a href="#competitive-exams" class="nav-exams">Competitive Exams</a>
+  <a href="#videos" class="nav-videos">Video Lectures</a>
+  <a href="#papers" class="nav-papers">Solved Papers</a>
+  <a href="#spreadsheet" class="nav-spreadsheet">Spreadsheet</a>
+  <a href="#method" class="nav-method">How to Study</a>
+  <a href="#connect" class="nav-connect">Connect</a>
+  <a href="https://shiva-institute-of-english.yolasite.com/"
+     target="_blank" rel="noopener noreferrer" class="nav-shiva">SHIVA Institute</a>
+</nav>
   </div>
 </header>
 
