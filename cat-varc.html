@@ -153,6 +153,38 @@
         padding: 30px 16px;
       }
     }
+    .course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  background: white;
+  border: 1px solid #e8dfd2;
+  border-radius: 9px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+.course-card h3 {
+  color: var(--wine);
+  font-size: 21px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.course-card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 600px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -215,6 +247,81 @@
   </section>
 
   <section id="practice">
+    
+<section id="courses">
+  <h2 class="section-heading">Management Entrance Courses</h2>
+  <p class="intro">
+    Everything you need to prepare for management entrance examinations.
+    Explore courses, build your skills and practise strategically.
+  </p>
+
+  <div class="course-grid">
+
+    <div class="course-card">
+      <span class="tag">CAT Preparation</span>
+      <h3>CAT 2027 Course</h3>
+      <p>Comprehensive preparation for CAT 2027.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <span class="tag">CAT Preparation</span>
+      <h3>CAT 2028 Course</h3>
+      <p>Build a strong foundation for CAT 2028.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>XAT Course</h3>
+      <p>Prepare for Verbal Ability, Decision Making and other XAT sections.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>SNAP Course</h3>
+      <p>Practise speed, accuracy and aptitude for SNAP.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>NMAT Course</h3>
+      <p>Prepare for the NMAT examination with focused practice.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>SNAP + NMAT Course</h3>
+      <p>Combined preparation for two important management entrance tests.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>CMAT Course</h3>
+      <p>Develop the skills required for CMAT preparation.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>CUET PG Course</h3>
+      <p>Focused preparation for postgraduate entrance examinations.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>MAH-CET Course</h3>
+      <p>Prepare for the Maharashtra MBA entrance examination.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+    <div class="course-card">
+      <h3>SRCC GBO Course</h3>
+      <p>Prepare for the Global Business Operations entrance examination.</p>
+      <a href="#practice" class="button">Know More</a>
+    </div>
+
+  </div>
+</section>
+
     <h2 class="section-heading">Online Practice</h2>
     <p class="intro">
       Practise Reading Comprehension, Para Jumbles,
