@@ -950,15 +950,18 @@ footer {
   </div>
 </section>
 
+
 <!-- VIDEO CLASSROOM -->
 
 <section id="videos">
   <div class="wrap">
+
     <div class="section-head">
       <div class="eyebrow eyebrow-brand">
-  <img src="SHIVA.png" alt="SHIVA logo" class="eyebrow-logo">
-  <span>SHIVA Institute of English</span>
-</div>
+        <img src="SHIVA.png" alt="SHIVA logo" class="eyebrow-logo">
+        <span>SHIVA Institute of English</span>
+      </div>
+
       <h2>English Literature Video Classroom</h2>
       <p>
         Explore video lectures, literary explanations and discussions
@@ -967,46 +970,32 @@ footer {
     </div>
 
     <style>
-     #videos .video-grid {
-  display: flex;
-  gap: 22px;
-  width: max-content;
-}
+      #videos .video-carousel {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0 20px;
+      }
 
-#videos .video-card {
-  flex: 0 0 320px;
-  width: 320px;
-}
+      #videos .video-track {
+        display: flex;
+        width: max-content;
+        animation: videoRolling 35s linear infinite;
+      }
 
-#videos .video-carousel {
-  width: 100%;
-  overflow: hidden;
-  padding: 10px 0 20px;
-}
+      #videos .video-carousel:hover .video-track {
+        animation-play-state: paused;
+      }
 
-#videos .video-track {
-  display: flex;
-  width: max-content;
-  animation: videoRolling 35s linear infinite;
-}
-
-#videos .video-carousel:hover .video-track {
-  animation-play-state: paused;
-}
-
-@keyframes videoRolling {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@media (max-width: 550px) {
-  #videos .video-card {
-    flex-basis: 270px;
-    width: 270px;
-  }
-}
+      #videos .video-grid {
+        display: flex;
+        flex-shrink: 0;
+        gap: 22px;
+        padding-right: 22px;
+      }
 
       #videos .video-card {
+        flex: 0 0 320px;
+        width: 320px;
         background: #fff;
         border: 1px solid #e8dfd2;
         border-radius: 12px;
@@ -1086,99 +1075,182 @@ footer {
         display: inline-block;
       }
 
-      @media (max-width: 800px) {
-        #videos .video-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+      @keyframes videoRolling {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
         }
       }
 
       @media (max-width: 550px) {
-        #videos .video-grid {
-          grid-template-columns: 1fr;
+        #videos .video-card {
+          flex-basis: 270px;
+          width: 270px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #videos .video-track {
+          animation: none;
         }
       }
     </style>
 
     <div class="video-carousel">
-  <div class="video-track">
-    <div class="video-grid">
+      <div class="video-track">
 
-      <article class="video-card">
-        <a class="video-thumb"
-           href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
-           target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/zGGJOO9zNsA/hqdefault.jpg"
-               alt="Abisara The Tryst by Rabindranath Tagore">
-          <span class="play-icon">▶</span>
-        </a>
-        <div class="video-info">
-          <h3>01. Abisara (The Tryst)</h3>
-          <p><strong>Rabindranath Tagore</strong><br>
-          Detailed Explanation &amp; Discussion</p>
-          <a class="btn" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
-             target="_blank" rel="noopener noreferrer">Watch Video</a>
+        <!-- ORIGINAL FOUR VIDEO CARDS -->
+
+        <div class="video-grid">
+
+          <article class="video-card">
+            <a class="video-thumb"
+               href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+               target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/zGGJOO9zNsA/hqdefault.jpg"
+                   alt="Abisara The Tryst by Rabindranath Tagore">
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>01. Abisara (The Tryst)</h3>
+              <p><strong>Rabindranath Tagore</strong><br>
+              Detailed Explanation &amp; Discussion</p>
+              <a class="btn" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+                 target="_blank" rel="noopener noreferrer">Watch Video</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb"
+               href="https://www.youtube.com/watch?v=b_McfKICOyY"
+               target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/b_McfKICOyY/hqdefault.jpg"
+                   alt="Blood Knot by Athol Fugard">
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>02. Blood Knot</h3>
+              <p><strong>Athol Fugard</strong><br>
+              Discussion of the Play</p>
+              <a class="btn" href="https://www.youtube.com/watch?v=b_McfKICOyY"
+                 target="_blank" rel="noopener noreferrer">Watch Video</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb"
+               href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
+               target="_blank" rel="noopener noreferrer">
+              <div class="video-placeholder">
+                <span>▶</span>
+                <strong>BLOOD KNOT</strong>
+                <small>Complete Video Series</small>
+              </div>
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>03. Blood Knot – Complete Series</h3>
+              <p>Watch the complete video series and select individual episodes.</p>
+              <a class="btn"
+                 href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
+                 target="_blank" rel="noopener noreferrer">Open Playlist</a>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb"
+               href="https://www.youtube.com/@TheSibabrata"
+               target="_blank" rel="noopener noreferrer">
+              <div class="video-placeholder">
+                <span>▶</span>
+                <strong>THE SIBABRATA</strong>
+                <small>YouTube Video Library</small>
+              </div>
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>04. The Sibabrata – Video Library</h3>
+              <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
+              <a class="btn" href="https://www.youtube.com/@TheSibabrata"
+                 target="_blank" rel="noopener noreferrer">Visit Channel</a>
+            </div>
+          </article>
+
         </div>
-      </article>
 
-      <article class="video-card">
-        <a class="video-thumb"
-           href="https://www.youtube.com/watch?v=b_McfKICOyY"
-           target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/b_McfKICOyY/hqdefault.jpg"
-               alt="Blood Knot by Athol Fugard">
-          <span class="play-icon">▶</span>
-        </a>
-        <div class="video-info">
-          <h3>02. Blood Knot</h3>
-          <p><strong>Athol Fugard</strong><br>
-          Discussion of the Play</p>
-          <a class="btn" href="https://www.youtube.com/watch?v=b_McfKICOyY"
-             target="_blank" rel="noopener noreferrer">Watch Video</a>
+        <!-- DUPLICATE FOUR CARDS FOR SEAMLESS LOOP -->
+
+        <div class="video-grid" aria-hidden="true">
+
+          <article class="video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+               tabindex="-1">
+              <img src="https://img.youtube.com/vi/zGGJOO9zNsA/hqdefault.jpg" alt="">
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>01. Abisara (The Tryst)</h3>
+              <p><strong>Rabindranath Tagore</strong><br>
+              Detailed Explanation &amp; Discussion</p>
+              <span class="btn">Watch Video</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=b_McfKICOyY"
+               tabindex="-1">
+              <img src="https://img.youtube.com/vi/b_McfKICOyY/hqdefault.jpg" alt="">
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>02. Blood Knot</h3>
+              <p><strong>Athol Fugard</strong><br>
+              Discussion of the Play</p>
+              <span class="btn">Watch Video</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb"
+               href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
+               tabindex="-1">
+              <div class="video-placeholder">
+                <span>▶</span>
+                <strong>BLOOD KNOT</strong>
+                <small>Complete Video Series</small>
+              </div>
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>03. Blood Knot – Complete Series</h3>
+              <p>Watch the complete video series and select individual episodes.</p>
+              <span class="btn">Open Playlist</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <a class="video-thumb" href="https://www.youtube.com/@TheSibabrata"
+               tabindex="-1">
+              <div class="video-placeholder">
+                <span>▶</span>
+                <strong>THE SIBABRATA</strong>
+                <small>YouTube Video Library</small>
+              </div>
+              <span class="play-icon">▶</span>
+            </a>
+            <div class="video-info">
+              <h3>04. The Sibabrata – Video Library</h3>
+              <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
+              <span class="btn">Visit Channel</span>
+            </div>
+          </article>
+
         </div>
-      </article>
 
-      <article class="video-card">
-        <a class="video-thumb"
-           href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
-           target="_blank" rel="noopener noreferrer">
-          <div class="video-placeholder">
-            <span>▶</span>
-            <strong>BLOOD KNOT</strong>
-            <small>Complete Video Series</small>
-          </div>
-          <span class="play-icon">▶</span>
-        </a>
-        <div class="video-info">
-          <h3>03. Blood Knot – Complete Series</h3>
-          <p>Watch the complete video series and select individual episodes.</p>
-          <a class="btn"
-             href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
-             target="_blank" rel="noopener noreferrer">Open Playlist</a>
-        </div>
-      </article>
-
-      <article class="video-card">
-        <a class="video-thumb"
-           href="https://www.youtube.com/@TheSibabrata"
-           target="_blank" rel="noopener noreferrer">
-          <div class="video-placeholder">
-            <span>▶</span>
-            <strong>THE SIBABRATA</strong>
-            <small>YouTube Video Library</small>
-          </div>
-          <span class="play-icon">▶</span>
-        </a>
-        <div class="video-info">
-          <h3>04. The Sibabrata – Video Library</h3>
-          <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
-          <a class="btn" href="https://www.youtube.com/@TheSibabrata"
-             target="_blank" rel="noopener noreferrer">Visit Channel</a>
-        </div>
-      </article>
-
+      </div>
     </div>
-  </div>
-</div>
 
     <div class="note">
       <strong>Learning suggestion:</strong>
@@ -1186,8 +1258,10 @@ footer {
       and characters, and revise the important points before
       attempting UGC NET questions.
     </div>
+
   </div>
 </section>
+
 
 <!-- CAT VARC SOLVED PAPERS -->
 <section id="cat-varc">
