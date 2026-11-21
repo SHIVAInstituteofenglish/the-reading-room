@@ -88,6 +88,19 @@ header {
   width:28px;
   height:auto;
 }
+
+/* Logo before institute name in section headings */
+.eyebrow-brand {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.eyebrow-logo {
+  width:24px;
+  height:24px;
+  object-fit:contain;
+}
 .brand small {
   display:block;
   color:var(--muted);
@@ -876,7 +889,10 @@ footer {
 <section id="videos">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">SHIVA Institute of English</div>
+      <div class="eyebrow eyebrow-brand">
+  <img src="SHIVA.png" alt="SHIVA logo" class="eyebrow-logo">
+  <span>SHIVA Institute of English</span>
+</div>
       <h2>English Literature Video Classroom</h2>
       <p>
         Explore video lectures, literary explanations and discussions
