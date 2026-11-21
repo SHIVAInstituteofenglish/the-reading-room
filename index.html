@@ -162,7 +162,33 @@ section {padding:54px 0}
   border-radius:5px;
 }
 #papers .paper iframe {height:680px}
+/* SIDE-BY-SIDE EXAM SECTIONS */
+.exam-columns {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  width:min(1120px,92%);
+  margin:0 auto;
+  align-items:start;
+}
 
+.exam-columns > section {
+  padding:40px 0;
+}
+
+.exam-columns .wrap {
+  width:100%;
+}
+
+.exam-columns .test-grid {
+  grid-template-columns:1fr;
+}
+
+@media(max-width:800px) {
+  .exam-columns {
+    grid-template-columns:1fr;
+  }
+}
 /* ONLINE TESTS */
 .test-grid {
   display:grid;
@@ -308,6 +334,7 @@ footer {
     <nav aria-label="Main navigation">
       <a href="#shelves">Study Shelves</a>
       <a href="#tests">Online Tests</a>
+      <a href="#competitive-exams">Competitive Exams</a>
       <a href="#videos">Video Lectures</a>
       <a href="#papers">Solved Papers</a>
       <a href="#spreadsheet">Spreadsheet</a>
@@ -404,6 +431,7 @@ footer {
 
 
 <!-- UGC NET ONLINE TESTS -->
+  <div class="exam-columns">
 <section id="tests">
   <div class="wrap">
     <div class="section-head">
@@ -511,9 +539,179 @@ footer {
       </article>
 
     </div>
-    
+    </div>
 </section>
 
+<!-- COMPETITIVE EXAMS SECTION -->
+<section id="competitive-exams">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Beyond UGC NET</div>
+      <h2>Competitive Exams &amp; Entrance Preparation</h2>
+      <p>
+        Explore structured preparation resources, study materials,
+        practice questions and mock tests for major competitive
+        examinations and entrance programmes.
+      </p>
+    </div>
+
+    <div class="test-grid">
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 01</span>
+          <h3>CAT</h3>
+          <p>Common Admission Test – VARC, DILR and Quantitative Aptitude.</p>
+        </div>
+        <a class="btn" href="#cat">Explore CAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 02</span>
+          <h3>MAT</h3>
+          <p>Management Aptitude Test preparation and practice.</p>
+        </div>
+        <a class="btn" href="#mat">Explore MAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 03</span>
+          <h3>XAT</h3>
+          <p>Verbal Ability, Reading Comprehension, Decision Making and other sections.</p>
+        </div>
+        <a class="btn" href="#xat">Explore XAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 04</span>
+          <h3>GMAT</h3>
+          <p>Graduate Management Admission Test preparation.</p>
+        </div>
+        <a class="btn" href="#gmat">Explore GMAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 05</span>
+          <h3>GRE</h3>
+          <p>Graduate Record Examination – Verbal Reasoning and preparation.</p>
+        </div>
+        <a class="btn" href="#gre">Explore GRE</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 06</span>
+          <h3>SNAP</h3>
+          <p>Symbiosis National Aptitude Test preparation.</p>
+        </div>
+        <a class="btn" href="#snap">Explore SNAP</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">MANAGEMENT 07</span>
+          <h3>NMAT</h3>
+          <p>NMAT by GMAC – language skills, reasoning and quantitative skills.</p>
+        </div>
+        <a class="btn" href="#nmat">Explore NMAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">LAW ENTRANCE 08</span>
+          <h3>CLAT</h3>
+          <p>Common Law Admission Test preparation.</p>
+        </div>
+        <a class="btn" href="#clat">Explore CLAT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ENTRANCE 09</span>
+          <h3>IPM</h3>
+          <p>Integrated Programme in Management entrance preparation.</p>
+        </div>
+        <a class="btn" href="#ipm">Explore IPM</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">BANKING 10</span>
+          <h3>BANK PO</h3>
+          <p>Bank Probationary Officer examinations – English, reasoning and aptitude.</p>
+        </div>
+        <a class="btn" href="#bank-po">Explore BANK PO</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">ENTRANCE 11</span>
+          <h3>CUET</h3>
+          <p>Common University Entrance Test preparation.</p>
+        </div>
+        <a class="btn" href="#cuet">Explore CUET</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">COMPETITIVE 12</span>
+          <h3>CGSL</h3>
+          <p>Dedicated preparation resources and practice.</p>
+        </div>
+        <a class="btn" href="#cgsl">Explore CGSL</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">SCHOOL ENTRANCE 13</span>
+          <h3>OAVT</h3>
+          <p>Odisha Adarsha Vidyalaya Entrance Test preparation.</p>
+        </div>
+        <a class="btn" href="#oavt">Explore OAVT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">TEACHING 14</span>
+          <h3>PGT</h3>
+          <p>Post Graduate Teacher recruitment examination preparation.</p>
+        </div>
+        <a class="btn" href="#pgt">Explore PGT</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">SCHOOL 15</span>
+          <h3>STATE BOARD TEST</h3>
+          <p>School-level examination preparation and practice.</p>
+        </div>
+        <a class="btn" href="#state-board">Explore State Board</a>
+      </article>
+
+      <article class="test-card">
+        <div>
+          <span class="test-number">FOUNDATION 16</span>
+          <h3>CLASS X FOUNDATION PROGRAMME</h3>
+          <p>Foundation learning, English language skills and examination readiness.</p>
+        </div>
+        <a class="btn" href="#class-x">Explore Foundation</a>
+      </article>
+
+    </div>
+
+    <div class="test-note">
+      <strong>For Students:</strong>
+      Select your examination to explore its dedicated learning
+      resources. Practice materials and test links will be added
+      to the respective examination pages.
+    </div>
+  </div>
+</section>
+</div>
 <!-- SOLVED PAPERS -->
 <section id="papers">
   <div class="wrap">
