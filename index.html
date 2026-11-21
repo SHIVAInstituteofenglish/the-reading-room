@@ -967,11 +967,44 @@ footer {
     </div>
 
     <style>
-      #videos .video-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
+     #videos .video-grid {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+}
+
+#videos .video-card {
+  flex: 0 0 320px;
+  width: 320px;
+}
+
+#videos .video-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 20px;
+}
+
+#videos .video-track {
+  display: flex;
+  width: max-content;
+  animation: videoRolling 35s linear infinite;
+}
+
+#videos .video-carousel:hover .video-track {
+  animation-play-state: paused;
+}
+
+@keyframes videoRolling {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 550px) {
+  #videos .video-card {
+    flex-basis: 270px;
+    width: 270px;
+  }
+}
 
       #videos .video-card {
         background: #fff;
@@ -1066,6 +1099,8 @@ footer {
       }
     </style>
 
+    <div class="video-carousel">
+  <div class="video-track">
     <div class="video-grid">
 
       <article class="video-card">
@@ -1142,6 +1177,8 @@ footer {
       </article>
 
     </div>
+  </div>
+</div>
 
     <div class="note">
       <strong>Learning suggestion:</strong>
