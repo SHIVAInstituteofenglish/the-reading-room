@@ -1275,86 +1275,129 @@ footer {
         Practise with solved CAT questions and explanations.
       </p>
     </div>
+     
+<style>
+  #cat-varc .cat-video-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 20px;
+  }
 
-    <style>
-      #cat-varc .video-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-      }
+  #cat-varc .video-row {
+    width: 100%;
+    overflow: hidden;
+  }
 
-      #cat-varc .video-card {
-        background: #fff;
-        border: 1px solid #e8dfd2;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 3px 12px rgba(0,0,0,.06);
-      }
+  #cat-varc .video-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: catVideoLeft 45s linear infinite;
+  }
 
-      #cat-varc .video-thumb {
-        display: block;
-        position: relative;
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        background: #482536;
-      }
+  #cat-varc .video-track.reverse {
+    animation-name: catVideoRight;
+  }
 
-      #cat-varc .video-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform .3s ease;
-      }
+  #cat-varc .video-group {
+    display: flex;
+    flex-shrink: 0;
+    gap: 20px;
+    width: max-content;
+  }
 
-      #cat-varc .video-thumb:hover img {
-        transform: scale(1.05);
-      }
+  #cat-varc .video-card {
+    flex: 0 0 280px;
+    width: 280px;
+    background: #fff;
+    border: 1px solid #e8dfd2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+  }
 
-      #cat-varc .play-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 54px;
-        height: 38px;
-        border-radius: 10px;
-        background: #c62828;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-      }
+  #cat-varc .video-thumb {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #482536;
+  }
 
-      #cat-varc .video-info {
-        padding: 15px;
-      }
+  #cat-varc .video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
+  }
 
-      #cat-varc .video-info h3 {
-        margin: 0 0 10px;
-        font-size: 17px;
-      }
+  #cat-varc .video-thumb:hover img {
+    transform: scale(1.05);
+  }
 
-      #cat-varc .video-info p {
-        font-size: 14px;
-        margin: 0 0 12px;
-      }
+  #cat-varc .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 38px;
+    border-radius: 10px;
+    background: #c62828;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
 
-      @media (max-width: 800px) {
-        #cat-varc .video-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
+  #cat-varc .video-info {
+    padding: 15px;
+  }
 
-      @media (max-width: 550px) {
-        #cat-varc .video-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+  #cat-varc .video-info h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+  }
 
-    <div class="video-grid">
+  #cat-varc .video-info p {
+    font-size: 14px;
+    margin: 0 0 12px;
+  }
+
+  #cat-varc .video-row:hover .video-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes catVideoLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes catVideoRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  @media (max-width: 550px) {
+    #cat-varc .video-card {
+      flex-basis: 245px;
+      width: 245px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #cat-varc .video-track {
+      animation: none;
+    }
+  }
+</style>
+
+    <div class="cat-video-rows" id="catVideoRows">
 
       <article class="video-card">
         <a class="video-thumb" href="https://www.youtube.com/watch?v=24xTuh5dYV4" target="_blank" rel="noopener noreferrer">
@@ -1556,8 +1599,54 @@ footer {
         <div class="video-info"><h3>CAT VARC Solved Paper 25</h3><p>Video Solution and Explanation</p></div>
       </article>
 
+   </article>
+
     </div>
   </div>
+
+  <script>
+  (function () {
+    const container = document.getElementById("catVideoRows");
+    if (!container || container.dataset.ready === "true") return;
+
+    const cards = Array.from(container.querySelectorAll(":scope > .video-card"));
+    if (cards.length !== 25) return;
+
+    container.dataset.ready = "true";
+
+    const groups = [
+      cards.slice(0, 7),
+      cards.slice(7, 13),
+      cards.slice(13, 19),
+      cards.slice(19, 25)
+    ];
+
+    groups.forEach((groupCards, index) => {
+      const row = document.createElement("div");
+      row.className = "video-row";
+
+      const track = document.createElement("div");
+      track.className = "video-track";
+      if (index % 2 === 1) track.classList.add("reverse");
+
+      const firstGroup = document.createElement("div");
+      firstGroup.className = "video-group";
+      groupCards.forEach(card => firstGroup.appendChild(card));
+
+      const secondGroup = firstGroup.cloneNode(true);
+      secondGroup.setAttribute("aria-hidden", "true");
+      secondGroup.querySelectorAll("a").forEach(link => {
+        link.setAttribute("tabindex", "-1");
+      });
+
+      track.appendChild(firstGroup);
+      track.appendChild(secondGroup);
+      row.appendChild(track);
+      container.appendChild(row);
+    });
+  })();
+  </script>
+
 </section>
 
 <!-- HOW TO STUDY -->
