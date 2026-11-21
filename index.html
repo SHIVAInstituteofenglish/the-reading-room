@@ -829,6 +829,7 @@ footer {
 </section>
 
 <!-- VIDEO CLASSROOM -->
+
 <section id="videos">
   <div class="wrap">
     <div class="section-head">
@@ -840,69 +841,181 @@ footer {
       </p>
     </div>
 
-    <div class="paper">
-      <div class="paper-head">
-        <h3>01. Abisara (The Tryst)</h3>
-        <a class="btn" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
-           target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-      </div>
-      <p><strong>Rabindranath Tagore</strong> | Detailed Explanation &amp; Discussion</p>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/zGGJOO9zNsA"
-        title="Abisara The Tryst by Rabindranath Tagore"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <style>
+      #videos .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
 
-    <div class="paper">
-      <div class="paper-head">
-        <h3>02. Blood Knot</h3>
-        <a class="btn" href="https://www.youtube.com/watch?v=b_McfKICOyY"
-           target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-      </div>
-      <p><strong>Athol Fugard</strong> | Discussion of the Play</p>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/b_McfKICOyY"
-        title="Blood Knot by Athol Fugard"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+      #videos .video-card {
+        background: #fff;
+        border: 1px solid #e8dfd2;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      }
 
-    <div class="paper">
-      <div class="paper-head">
-        <h3>03. Blood Knot – Complete Video Series</h3>
-        <a class="btn"
+      #videos .video-thumb {
+        display: block;
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #3c2430;
+      }
+
+      #videos .video-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .3s ease;
+      }
+
+      #videos .video-thumb:hover img {
+        transform: scale(1.05);
+      }
+
+      #videos .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 54px;
+        height: 38px;
+        border-radius: 10px;
+        background: #c62828;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+      }
+
+      #videos .video-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        background: linear-gradient(135deg, #482536, #9b6b43);
+      }
+
+      #videos .video-placeholder span {
+        font-size: 38px;
+        margin-bottom: 8px;
+      }
+
+      #videos .video-info {
+        padding: 16px;
+      }
+
+      #videos .video-info h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      #videos .video-info p {
+        margin: 0 0 14px;
+        font-size: 14px;
+      }
+
+      #videos .video-info .btn {
+        display: inline-block;
+      }
+
+      @media (max-width: 800px) {
+        #videos .video-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 550px) {
+        #videos .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <div class="video-grid">
+
+      <article class="video-card">
+        <a class="video-thumb"
+           href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/zGGJOO9zNsA/hqdefault.jpg"
+               alt="Abisara The Tryst by Rabindranath Tagore">
+          <span class="play-icon">▶</span>
+        </a>
+        <div class="video-info">
+          <h3>01. Abisara (The Tryst)</h3>
+          <p><strong>Rabindranath Tagore</strong><br>
+          Detailed Explanation &amp; Discussion</p>
+          <a class="btn" href="https://www.youtube.com/watch?v=zGGJOO9zNsA"
+             target="_blank" rel="noopener noreferrer">Watch Video</a>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <a class="video-thumb"
+           href="https://www.youtube.com/watch?v=b_McfKICOyY"
+           target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/b_McfKICOyY/hqdefault.jpg"
+               alt="Blood Knot by Athol Fugard">
+          <span class="play-icon">▶</span>
+        </a>
+        <div class="video-info">
+          <h3>02. Blood Knot</h3>
+          <p><strong>Athol Fugard</strong><br>
+          Discussion of the Play</p>
+          <a class="btn" href="https://www.youtube.com/watch?v=b_McfKICOyY"
+             target="_blank" rel="noopener noreferrer">Watch Video</a>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <a class="video-thumb"
            href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
-           target="_blank" rel="noopener noreferrer">Open Full Playlist</a>
-      </div>
-      <p>Watch the complete Blood Knot video series. Select individual episodes from the playlist.</p>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
-        title="Blood Knot Complete Video Playlist"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+           target="_blank" rel="noopener noreferrer">
+          <div class="video-placeholder">
+            <span>▶</span>
+            <strong>BLOOD KNOT</strong>
+            <small>Complete Video Series</small>
+          </div>
+          <span class="play-icon">▶</span>
+        </a>
+        <div class="video-info">
+          <h3>03. Blood Knot – Complete Series</h3>
+          <p>Watch the complete video series and select individual episodes.</p>
+          <a class="btn"
+             href="https://www.youtube.com/playlist?list=PLfdgd6Oj2EWHHkZeytT2VPT9wIyLiko7y"
+             target="_blank" rel="noopener noreferrer">Open Playlist</a>
+        </div>
+      </article>
 
-    <div class="paper">
-      <div class="paper-head">
-        <h3>04. The Sibabrata – YouTube Video Library</h3>
-        <a class="btn" href="https://www.youtube.com/@TheSibabrata"
-           target="_blank" rel="noopener noreferrer">Visit YouTube Channel</a>
-      </div>
-      <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=UUkQuqoH08mGrk3OLjdDzJfQ"
-        title="The Sibabrata YouTube Video Library"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+      <article class="video-card">
+        <a class="video-thumb"
+           href="https://www.youtube.com/@TheSibabrata"
+           target="_blank" rel="noopener noreferrer">
+          <div class="video-placeholder">
+            <span>▶</span>
+            <strong>THE SIBABRATA</strong>
+            <small>YouTube Video Library</small>
+          </div>
+          <span class="play-icon">▶</span>
+        </a>
+        <div class="video-info">
+          <h3>04. The Sibabrata – Video Library</h3>
+          <p>Explore more lectures from the Teach &amp; Thrive channel.</p>
+          <a class="btn" href="https://www.youtube.com/@TheSibabrata"
+             target="_blank" rel="noopener noreferrer">Visit Channel</a>
+        </div>
+      </article>
+
     </div>
 
     <div class="note">
@@ -913,6 +1026,7 @@ footer {
     </div>
   </div>
 </section>
+
 
 <!-- HOW TO STUDY -->
 <section id="method">
