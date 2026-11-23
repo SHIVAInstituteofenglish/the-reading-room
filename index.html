@@ -482,6 +482,90 @@ footer {
     height: 270px;
   }
 }
+  .hero-image img {
+    height: 270px;
+  }
+}
+
+/* Faculty Profile Link below Hero Image */
+.faculty-profile {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.faculty-profile:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* My Academic & Professional Moments Gallery */
+.academic-gallery {
+  padding: 60px 20px;
+}
+
+.academic-gallery h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+.gallery-category {
+  margin: 35px 0 18px;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  background-color: #f8fafc;
+}
+
+/* Prevent cropping of text on certificates and banners */
+.gallery-card img[src^="cert-"],
+.gallery-card img[src*="banner"] {
+  object-fit: contain;
+  padding: 8px;
+}
+
+.gallery-card figcaption {
+  padding: 14px 16px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #333333;
+}
+</style>
+</head>
 </style>
 </head>
 
@@ -539,9 +623,16 @@ footer {
         </div>
       </div>
 
-      <div class="hero-image">
-        <img src="profile-photo.webp" alt="Portrait of the founder of The Reading Room">
-      </div>
+<div class="hero-image">
+  <img src="profile-photo.webp" alt="Portrait of the founder of The Reading Room">
+
+  <a class="faculty-profile"
+     href="https://www.rmddc.ac.in/home/faculty_details/9"
+     target="_blank"
+     rel="noopener noreferrer">
+    View My Faculty Profile →
+  </a>
+</div>
 
     </div>
   </div>
@@ -1808,7 +1899,60 @@ footer {
 </div>
 
 </main>
+<section class="academic-gallery" id="achievements">
+  </section
+    <section class="academic-gallery" id="achievements">
+  <div class="container">
+    <h2>My Academic &amp; Professional Moments</h2>
+    <p class="section-subtitle">Academic events, guest lectures, and professional development milestones.</p>
 
+    <h3 class="gallery-category">Academic Events &amp; Guest Lectures</h3>
+    <div class="gallery-grid">
+      <figure class="gallery-card">
+        <img src="guest-lecture-handshake.png" alt="Welcoming guest speaker Mr. Ullas Pradhan at Raja Madhusudan Dev Degree College" loading="lazy">
+        <figcaption>Welcoming Guest Speaker Mr. Ullas Pradhan — Guest Lecture on Soft Skills, RMDDC (Nov 2021)</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="guest-lecture-group.jpg" alt="Faculty and organizers at the Guest Lecture at Raja Madhusudan Dev Degree College, Patia, Bhubaneswar" loading="lazy">
+        <figcaption>Guest Lecture at Raja Madhusudan Dev Degree College, Patia, Bhubaneswar</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="guest-lecture-banner.jpg" alt="Guest Lecture on Soft Skills by Mr. Ullas Pradhan on 8th and 9th November 2021 at RMDDC" loading="lazy">
+        <figcaption>Guest Lecture on Soft Skills (Nov 8–9, 2021) — IQAC &amp; Dept. of English, RMDDC</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="farewell-speech-1.jpg" alt="Speaking at the Department of English Bella Ciao event at Raja Madhusudan Dev Degree College on 27th July 2022" loading="lazy">
+        <figcaption>Department of English ("Bella Ciao"), RMDDC (July 27, 2022)</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="farewell-speech-2.jpg" alt="Addressing the Department of English Bella Ciao event at Raja Madhusudan Dev Degree College on 27th July 2022" loading="lazy">
+        <figcaption>Addressing the Department of English Event, RMDDC (July 27, 2022)</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="gallery-category">Webinars &amp; Certifications</h3>
+    <div class="gallery-grid">
+      <figure class="gallery-card">
+        <img src="cert-communication-skills.jpg" alt="Certificate of Participation in National Webinar on Communication Skills in English and Personality Development" loading="lazy">
+        <figcaption>National Webinar on Communication Skills &amp; Personality Development — Kamakhyanagar Degree College (March 16, 2022)</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="cert-academic-writing.jpg" alt="Certificate of participation in National Webinar on Academic Writing at KL University" loading="lazy">
+        <figcaption>National Webinar on Academic Writing: Core Concepts &amp; Essential Skills — KL University (Feb 25, 2022)</figcaption>
+      </figure>
+
+      <figure class="gallery-card">
+        <img src="cert-investor-awareness.png" alt="Certificate of Participation in National Level Webinar on Investor Awareness Program" loading="lazy">
+        <figcaption>National Level Webinar on Investor Awareness Program — Maharshi College of Natural Law (Feb 10, 2022)</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div class="footer-brand">
