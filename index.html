@@ -525,14 +525,17 @@ footer {
   border-bottom: 2px solid #e5e7eb;
   padding-bottom: 8px;
 }
-
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
   gap: 24px;
+  width: max-content;
+  animation: gallery-scroll 35s linear infinite;
 }
-
+.gallery-grid:hover {
+  animation-play-state: paused;
+}
 .gallery-card {
+  flex: 0 0 280px;
   margin: 0;
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -542,7 +545,6 @@ footer {
   display: flex;
   flex-direction: column;
 }
-
 .gallery-card img {
   width: 100%;
   height: 210px;
@@ -551,7 +553,6 @@ footer {
   background-color: #f8fafc;
 }
 
-/* Prevent cropping of text on certificates and banners */
 .gallery-card img[src^="cert-"],
 .gallery-card img[src*="banner"] {
   object-fit: contain;
@@ -563,6 +564,15 @@ footer {
   font-size: 0.92rem;
   line-height: 1.45;
   color: #333333;
+}
+
+@keyframes gallery-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>
 </head>
@@ -1924,8 +1934,18 @@ footer {
       </article>
     </div>
 
-    <h3 class="gallery-category">Academic Events &amp; Guest Lectures</h3>
-    <div class="gallery-grid">
+   
+Loading older messages…
+done
+Great! Please paste the complete Academic Events & Guest Lectures HTML section here, starting from:
+<div class="gallery-grid">
+
+and ending at its matching:
+</div>
+
+I'll prepare the exact replacement code so all five photographs roll continuously without gaps.
+<div class="gallery-grid">
+      <h3 class="gallery-category">Academic Events &amp; Guest Lectures</h3>
       <figure class="gallery-card">
         <img src="guest-lecture-handshake.png" alt="Welcoming guest speaker Mr. Ullas Pradhan at Raja Madhusudan Dev Degree College" loading="lazy">
         <figcaption>Welcoming Guest Speaker Mr. Ullas Pradhan — Guest Lecture on Soft Skills, RMDDC (Nov 2021)</figcaption>
@@ -1969,6 +1989,103 @@ footer {
         <figcaption>National Level Webinar on Investor Awareness Program — Maharshi College of Natural Law (Feb 10, 2022)</figcaption>
       </figure>
     </div>
+  </div>
+</section>
+…
+Thank you. I've spotted one small HTML placement issue: Academic Events & Guest Lectures is currently inside the <div class="gallery-grid">. The heading should be outside the rolling gallery.
+Let's correct both galleries and make the scrolling continuous.
+Step 3: Replace both gallery sections
+In index.html, replace the code you shared, starting from the first gallery-grid and ending at the second gallery's closing </div>, with this:
+
+<h3 class="gallery-category">Academic Events &amp; Guest Lectures</h3>
+
+<div class="gallery-grid">
+  <figure class="gallery-card">
+    <img src="guest-lecture-handshake.png" alt="Welcoming guest speaker Mr. Ullas Pradhan" loading="lazy">
+    <figcaption>Welcoming Guest Speaker Mr. Ullas Pradhan — Guest Lecture on Soft Skills, RMDDC (Nov 2021)</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="guest-lecture-group.jpg" alt="Faculty and organizers at the Guest Lecture" loading="lazy">
+    <figcaption>Guest Lecture at Raja Madhusudan Dev Degree College, Patia, Bhubaneswar</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="guest-lecture-banner.png" alt="Guest Lecture on Soft Skills, November 2021" loading="lazy">
+    <figcaption>Guest Lecture on Soft Skills (Nov 8–9, 2021) — IQAC &amp; Dept. of English, RMDDC</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="farewell-speech-1.jpg" alt="Speaking at Bella Ciao event" loading="lazy">
+    <figcaption>Department of English (Bella Ciao), RMDDC (July 27, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="farewell-speech-2.jpg" alt="Addressing the Department of English event" loading="lazy">
+    <figcaption>Addressing the Department of English Event, RMDDC (July 27, 2022)</figcaption>
+  </figure>
+
+  <!-- Duplicate cards for continuous scrolling -->
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="guest-lecture-handshake.png" alt="" loading="lazy">
+    <figcaption>Welcoming Guest Speaker Mr. Ullas Pradhan — Guest Lecture on Soft Skills, RMDDC (Nov 2021)</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="guest-lecture-group.jpg" alt="" loading="lazy">
+    <figcaption>Guest Lecture at Raja Madhusudan Dev Degree College, Patia, Bhubaneswar</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="guest-lecture-banner.png" alt="" loading="lazy">
+    <figcaption>Guest Lecture on Soft Skills (Nov 8–9, 2021) — IQAC &amp; Dept. of English, RMDDC</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="farewell-speech-1.jpg" alt="" loading="lazy">
+    <figcaption>Department of English (Bella Ciao), RMDDC (July 27, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="farewell-speech-2.jpg" alt="" loading="lazy">
+    <figcaption>Addressing the Department of English Event, RMDDC (July 27, 2022)</figcaption>
+  </figure>
+</div>
+
+<h3 class="gallery-category">Webinars &amp; Certifications</h3>
+
+<div class="gallery-grid">
+  <figure class="gallery-card">
+    <img src="cert-communication-skills.png" alt="Communication Skills webinar certificate" loading="lazy">
+    <figcaption>National Webinar on Communication Skills &amp; Personality Development — Kamakhyanagar Degree College (March 16, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="cert-academic-writing.png" alt="Academic Writing webinar certificate" loading="lazy">
+    <figcaption>National Webinar on Academic Writing: Core Concepts &amp; Essential Skills — KL University (Feb 25, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card">
+    <img src="cert-investor-awareness.png" alt="Investor Awareness webinar certificate" loading="lazy">
+    <figcaption>National Level Webinar on Investor Awareness Program — Maharshi College of Natural Law (Feb 10, 2022)</figcaption>
+  </figure>
+
+  <!-- Duplicate cards for continuous scrolling -->
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="cert-communication-skills.png" alt="" loading="lazy">
+    <figcaption>National Webinar on Communication Skills &amp; Personality Development — Kamakhyanagar Degree College (March 16, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="cert-academic-writing.png" alt="" loading="lazy">
+    <figcaption>National Webinar on Academic Writing: Core Concepts &amp; Essential Skills — KL University (Feb 25, 2022)</figcaption>
+  </figure>
+
+  <figure class="gallery-card" aria-hidden="true">
+    <img src="cert-investor-awareness.png" alt="" loading="lazy">
+    <figcaption>National Level Webinar on Investor Awareness Program — Maharshi College of Natural Law (Feb 10, 2022)</figcaption>
+  </figure>
+</div>
   </div>
 </section>
 <footer>
