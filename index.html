@@ -574,8 +574,78 @@ footer {
     transform: translateX(-50%);
   }
 }
-</style>
-</head>
+
+.big-screen-stage {
+  width: min(1120px, 92%);
+  margin: 24px auto;
+}
+
+.big-screen-card {
+  background: linear-gradient(135deg, #0f1c2e 0%, #1b2f4a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 5vw, 56px);
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(15, 28, 46, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.big-screen-card.is-flashing-in {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.big-screen-card.is-vanishing {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.big-screen-card.is-gone {
+  display: none;
+}
+
+.big-screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.big-screen-tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: #f8fafc;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.big-screen-countdown {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.big-screen-quote {
+  margin: 0 auto 18px;
+  max-width: 26ch;
+  font-size: clamp(1.45rem, 3.2vw, 2.5rem);
+  line-height: 1.35;
+  font-style: italic;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.big-screen-author {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: #e2e8f0;
+  font-weight: 500;
+}
 </style>
 </head>
 
@@ -1946,6 +2016,21 @@ footer {
 </div>
 
 </main>
+    <div class="big-screen-stage" id="bigScreenQuoteStage" aria-live="polite">
+  <div class="big-screen-card" id="bigScreenQuoteCard">
+    <div class="big-screen-header">
+      <span class="big-screen-tag" id="bigScreenTag">APHORISM</span>
+      <span class="big-screen-countdown" id="bigScreenCountdown">Vanishes in 30s</span>
+    </div>
+    <blockquote class="big-screen-quote" id="bigScreenQuote">
+      “Style is the dress of thoughts.”
+    </blockquote>
+    <div class="big-screen-author" id="bigScreenAuthor">
+      — Lord Chesterfield, Essayist &amp; Statesman
+    </div>
+  </div>
+</div>
+    
 <section class="academic-gallery" id="achievements">
   <div class="wrap">
     <div class="section-head">
