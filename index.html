@@ -2030,8 +2030,20 @@ footer {
     </div>
   </div>
 </div>
-    
-<section class="academic-gallery" id="achievements">
+    <div class="big-screen-stage" id="bigScreenQuoteStage" aria-live="polite">
+  <div class="big-screen-card" id="bigScreenQuoteCard">
+    <div class="big-screen-header">
+      <span class="big-screen-tag" id="bigScreenTag">APHORISM</span>
+      <span class="big-screen-countdown" id="bigScreenCountdown">Vanishes in 30s</span>
+    </div>
+    <blockquote class="big-screen-quote" id="bigScreenQuote">
+      “Style is the dress of thoughts.”
+    </blockquote>
+    <div class="big-screen-author" id="bigScreenAuthor">
+      — Lord Chesterfield, Essayist &amp; Statesman
+    </div>
+  </div>
+</div><section class="academic-gallery" id="achievements">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Research, Events &amp; Milestones</div>
@@ -2164,6 +2176,98 @@ footer {
     </div>
   </div>
 </footer>
+<script>
+  (function () {
+    const VISIBLE_MS = 30000; // 30 seconds
+    const FADE_MS = 700;
+    const VANISH_PERMANENTLY = true;
+
+    const screenQuotes = [
+      {
+        form: "Aphorism",
+        quote: "Style is the dress of thoughts.",
+        author: "Lord Chesterfield",
+        role: "Essayist & Statesman"
+      },
+      {
+        form: "Maxim",
+        quote: "Brevity is the soul of wit.",
+        author: "William Shakespeare",
+        role: "Playwright & Poet"
+      },
+      {
+        form: "Adage",
+        quote: "A little learning is a dangerous thing.",
+        author: "Alexander Pope",
+        role: "Augustan Poet & Satirist"
+      },
+      {
+        form: "Essay Quote",
+        quote: "Some books are to be tasted, others to be swallowed, and some few to be chewed and digested.",
+        author: "Francis Bacon",
+        role: "Renaissance Essayist"
+      }
+    ];
+
+    const card = document.getElementById("bigScreenQuoteCard");
+    const tagEl = document.getElementById("bigScreenTag");
+    const countdownEl = document.getElementById("bigScreenCountdown");
+    const quoteEl = document.getElementById("bigScreenQuote");
+    const authorEl = document.getElementById("bigScreenAuthor");
+
+    if (!card || screenQuotes.length === 0) return;
+
+    let index = 0;
+    let vanishTimer = null;
+    let tickTimer = null;
+
+    function showQuote(i) {
+      const item = screenQuotes[i];
+      tagEl.textContent = item.form;
+      quoteEl.textContent = `“${item.quote}”`;
+      authorEl.textContent = `— ${item.author}, ${item.role}`;
+
+      card.classList.remove("is-gone", "is-vanishing");
+      card.classList.add("is-flashing-in");
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          card.classList.remove("is-flashing-in");
+        });
+      });
+
+      let remaining = Math.round(VISIBLE_MS / 1000);
+      countdownEl.textContent = `Vanishes in ${remaining}s`;
+
+      clearInterval(tickTimer);
+      tickTimer = setInterval(() => {
+        remaining -= 1;
+        if (remaining > 0) {
+          countdownEl.textContent = `Vanishes in ${remaining}s`;
+        } else {
+          clearInterval(tickTimer);
+          countdownEl.textContent = "Vanishing…";
+        }
+      }, 1000);
+
+      clearTimeout(vanishTimer);
+      vanishTimer = setTimeout(() => {
+        card.classList.add("is-vanishing");
+
+        setTimeout(() => {
+          if (VANISH_PERMANENTLY) {
+            card.classList.add("is-gone");
+          } else {
+            index = (index + 1) % screenQuotes.length;
+            showQuote(index);
+          }
+        }, FADE_MS);
+      }, VISIBLE_MS);
+    }
+
+    showQuote(index);
+  })();
+</script>
 
 </body>
 </html>
